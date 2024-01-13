@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"cSpell.words": [
+			"Crun",
+			"SHOWNORMAL"
+		],
+		"files.associations": {
+			"res.h": "c"
+		}
+	}
+}
