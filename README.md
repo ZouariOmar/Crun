@@ -9,23 +9,27 @@ The provided C code serves as a project initiation script named "Crun." Its prim
 ## Project Structure
 
 ```plaintext
-Crun Project
-|-- bin
-|   |-- debug
-|   |-- release
-|   |   |-- Crun.exe
-|   |-- test
-|-- doc
-|   |-- notes.txt
-|-- res
-|-- |-- img
-|   |   |-- Crun.ico
-|-- src
-|   |-- main.c
-|   |-- Makefile
-|-- Create_C_Project.code-workspace
-|-- LICENSE
-|-- README.md
+Crun
+│   Crun.code-workspace
+│   LICENSE
+│   README.md
+│
+├───bin
+|   ├───debug
+|   ├───release
+|   │      Crun.exe
+|   │
+|   └───test
+├───doc
+|      notes.txt
+│
+├───res
+|   └───img
+│          Crun.ico
+│
+└───src
+       main.c
+       Makefile
 ```
 ## How to Use
 ### Clone the Repository:
