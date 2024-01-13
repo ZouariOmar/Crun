@@ -32,7 +32,5 @@ Crun Project
    ```bash
    git clone https://github.com/ZouariOmar/Crun.git
    ```
-### Download from MediaFire:
-   ```bash
-   https://www.mediafire.com/file/a96uy3ekoqol2ab/Crun.rar/file
-   ```
+### Download Link:
+   [Crun Project Download](https://www.mediafire.com/file/a96uy3ekoqol2ab/Crun.rar/file)
