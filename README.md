@@ -31,6 +31,8 @@ Crun Project
 ### Clone the Repository:
    ```bash
    git clone https://github.com/ZouariOmar/Crun.git
-### Installed from MediaFire:
+   ```
+### Download from MediaFire:
    ```bash
    https://www.mediafire.com/file/a96uy3ekoqol2ab/Crun.rar/file
+   ```
