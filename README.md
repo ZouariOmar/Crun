@@ -21,7 +21,7 @@ Crun
 |   │
 |   └───test
 ├───doc
-|      notes
+|      notes.txt
 │
 ├───res
 |   └───img
