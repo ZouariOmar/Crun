@@ -70,7 +70,7 @@ int main(int argc, char const **argv)
 
         // * usr choice option 2
         case 2:
-            system("git clone https://github.com/ZouariOmar/Creat-Cpp-Project.git");
+            system("git clone https://github.com/ZouariOmar/Creat_Cpp_Project.git");
             loop = 0;
             break;
 
