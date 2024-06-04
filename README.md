@@ -37,4 +37,4 @@ Crun
    git clone https://github.com/ZouariOmar/Crun.git
    ```
 ### Download Link:
-   [Crun Project Download](https://www.mediafire.com/file/a96uy3ekoqol2ab/Crun.rar/file)
+   [Crun Project Download](https://www.mediafire.com/file/yqt1gponh5vjp4y/Crun.zip/file)
