@@ -4,7 +4,7 @@
 
 ## Overview
 
-The provided C code serves as a project initiation script named "Crun." Its primary functionality is to automate the setup process for a new C project by cloning a templates from multiple @ZouariOmar GitHub repository's. The project structure includes essential directories such as src, bin (with subdirectories for different build configurations), and res (for resources). The main function prints project information, determines the installation path, clones the template project, opens the installation directory, and displays a completion message. The script is tailored for Linux environments, utilizing Linux API functions.
+The provided C code serves as a project initiation script named "Crun." Its primary functionality is to automate the setup process for a new C project by cloning a templates from multiple [@ZouariOmar](https://github.com/ZouariOmar) GitHub repository's. The project structure includes essential directories such as src, bin (with subdirectories for different build configurations), and res (for resources). The main function prints project information, determines the installation path, clones the template project, opens the installation directory, and displays a completion message. The script is tailored for Linux environments, utilizing Linux API functions.
 
 ## Project Structure
 
