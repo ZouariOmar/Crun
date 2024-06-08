@@ -1,15 +1,20 @@
-# by_zouari_omar_full_stack_c/c++_dev
-# dd/mm/yyyy
-# Name Of Project Or Name The File
+# --------------------------------------------------------
+#? @file      makefile
+#? @author    @ZouariOmar (zouariomar20@gmail.com)
+#? @brief     IDE__VSC
+#? @version   0.1
+#? @date      2024-06-06
+#? @copyright Copyright (c) 2024
+# --------------------------------------------------------
 
 # Define the C compiler to use
 CC = gcc
 
 # Define the source file
-SRC_DIR = src/main.c
+SRC_DIR = project/src/main.c
 
 # Define the output directory
-OUT_DIR = bin/debug
+OUT_DIR = bin/build
 
 # Choose the name of the executable
 NAME = app

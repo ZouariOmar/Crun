@@ -11,6 +11,7 @@
 		],
 		"files.associations": {
 			"res.h": "c"
-		}
+		},
+		"editor.tabSize": 2
 	}
 }

@@ -1,6 +1,7 @@
 /* -----------------------------------------------
-* @author:    by_zouari_omar_full_stack_java_dev
-* @date:      mm/dd/yyyy
+* @author: @zouari_omar
+* @IDE:    vsc
+* @update: 06/04/24
 ? @file_name: color.h
 ----------------------------------------------- */
 
