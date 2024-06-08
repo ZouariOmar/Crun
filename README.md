@@ -36,7 +36,7 @@ The provided C code serves as a project initiation script named "Crun." Its prim
 12 directories, 11 files
 ```
 
-## How to Use (**Installation**)
+## How to Use
 
 To lunch the project on your Linux system, follow these steps:
 
@@ -64,7 +64,7 @@ To lunch the project on your Linux system, follow these steps:
     ./bin/build/app
     ```
 
-### Download Link: [Crun Project Download](https://www.mediafire.com/file/zxp1u5lp3fnifzi/Crun.zip/file)
+## Download Link: [Crun Project Download](https://www.mediafire.com/file/zxp1u5lp3fnifzi/Crun.zip/file)
 
 ## Contributing
 
