@@ -64,7 +64,9 @@ To lunch the project on your Linux system, follow these steps:
     ./bin/build/app
     ```
 
+---
 ## Download Link: [Crun Project Download](https://www.mediafire.com/file/zxp1u5lp3fnifzi/Crun.zip/file)
+---
 
 ## Contributing
 
