@@ -1,6 +1,6 @@
-# Create C Project
+# Crun
 
-**A simple program for starting a new C project.**
+**A simple program for starting a new project.**
 
 ## Overview
 
@@ -64,7 +64,7 @@ To lunch the project on your Linux system, follow these steps:
     ./bin/build/app
     ```
 
-### Download Link: [Crun Project Download](https://www.mediafire.com/file/yqt1gponh5vjp4y/Crun.zip/file)
+### Download Link: [Crun Project Download](https://www.mediafire.com/file/zxp1u5lp3fnifzi/Crun.zip/file)
 
 ## Contributing
 
