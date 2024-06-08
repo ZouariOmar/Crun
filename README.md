@@ -15,8 +15,8 @@ The provided C code serves as a project initiation script named "Crun." Its prim
 │   ├── debug
 │   │   └── app
 │   ├── release
-│   │   ├── Zrun
-│   │   └── Zrun.exe
+│   │   ├── Crun
+│   │   └── Crun.exe
 │   └── test
 ├── Crun.code-workspace
 ├── doc
