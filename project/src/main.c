@@ -65,7 +65,7 @@ int main(int argc, char const **argv) {
     switch (usr) {
     //* usr choice option 1
     case 1:
-      system("git clone https://github.com/ZouariOmar/Run_C_Project.git Create_C_Project");
+      system("git clone https://github.com/ZouariOmar/Run_C_Project.git");
       loop = 0;
       break;
 
