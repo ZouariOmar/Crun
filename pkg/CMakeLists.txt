@@ -7,5 +7,9 @@ project(Crun)
 # set the CMake engine version
 set(CMAKE_CXX_STANDARD 17)
 
+set(SOURCES ../project/src/main.c
+            ../project/src/lib.c
+            ../project/inc/inc.h)
+
 # add the main.cpp file as a source
-add_executable(${PROJECT_NAME} ../project/src/main.c)
+add_executable(${PROJECT_NAME} ${SOURCES})

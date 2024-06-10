@@ -10,7 +10,8 @@
 			"SHOWNORMAL"
 		],
 		"files.associations": {
-			"res.h": "c"
+			"res.h": "c",
+			"inc.h": "c"
 		},
 		"editor.tabSize": 2
 	}

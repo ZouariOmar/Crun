@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/Crun.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/project/src/main.c.o CMakeFiles/Crun.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/project/src/lib.c.o -o Crun
