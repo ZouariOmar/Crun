@@ -219,8 +219,6 @@ void prj_name(char *new_project_name) {
   //* take the usr input
   fgets(new_project_name, sizeof(new_project_name), stdin);
 
-  printf("%s\n", new_project_name);
-
   //* check if the last char is a newline
   if (new_project_name[strlen(new_project_name) - 1] == '\n')
     new_project_name[strlen(new_project_name) - 1] = '\0';
