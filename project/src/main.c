@@ -19,13 +19,13 @@
  * @return int
  */
 int main(int argc, char const **argv) {
-  //* Clear the bash interface
-  ////system("clear");
+  // Clear the bash interface
+  system("clear");
 
-  //* Show the project intro bar
+  // Show the project intro bar
   menu(0);
 
-  //* Set the installation path to the directory where the executable is located
+  // Set the installation path to the directory where the executable is located
   char installPath[PATH_MAX];
 
   //* Get the current user path directory
@@ -36,20 +36,20 @@ int main(int argc, char const **argv) {
   }
   installPath[len] = '\0';
 
-  //* Del the last backslash
+  // Del the last backslash
   char *lastSlash = strrchr(installPath, '/');
   if (lastSlash != NULL)
     *lastSlash = '\0';
 
-  //* Init the loop & usr int var
+  // Init the loop & usr int var
   int loop = 1,
       usr;
 
   while (loop) {
-    //* Show the Crun menu
+    // Show the Crun menu
     menu(1);
 
-    //* Take the usr input option
+    // Take the usr input option
     scanf("%d", &usr);
 
     //* Run the program

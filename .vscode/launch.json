@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/zouari_omar/Documents/Daily/Projects/Zrun/Zrun/project/src",
-      "program": "/home/zouari_omar/Documents/Daily/Projects/Zrun/Zrun/project/src/build/Debug/outDebug",
+      "cwd": "/home/zouari_omar/Documents/Daily/Projects/Crun/Crun",
+      "program": "/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

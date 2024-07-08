@@ -23,7 +23,7 @@
 
 void menu(int);
 void Crun(int *, int);
-void clone_project(char *, char *, char *, int *);
+void clone_project(char *, char *, int *);
 char *built_sys();
 void prj_name(char *);
 
