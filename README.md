@@ -1,3 +1,5 @@
+<!-- @format -->
+
 # Crun
 
 **A simple program for starting a new project.**
@@ -8,32 +10,87 @@ The provided C code serves as a project initiation script named "Crun." Its prim
 
 ## Project Structure
 
-```plaintext
+```bash
 .Crun
 ├── bin
 │   ├── build
+│   │   ├── CMakeCache.txt
+│   │   ├── CMakeFiles
+│   │   │   ├── 3.29.3
+│   │   │   │   ├── CMakeCCompiler.cmake
+│   │   │   │   ├── CMakeCXXCompiler.cmake
+│   │   │   │   ├── CMakeDetermineCompilerABI_C.bin
+│   │   │   │   ├── CMakeDetermineCompilerABI_CXX.bin
+│   │   │   │   ├── CMakeSystem.cmake
+│   │   │   │   ├── CompilerIdC
+│   │   │   │   │   ├── a.out
+│   │   │   │   │   ├── CMakeCCompilerId.c
+│   │   │   │   │   └── tmp
+│   │   │   │   └── CompilerIdCXX
+│   │   │   │       ├── a.out
+│   │   │   │       ├── CMakeCXXCompilerId.cpp
+│   │   │   │       └── tmp
+│   │   │   ├── cmake.check_cache
+│   │   │   ├── CMakeConfigureLog.yaml
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── Crun.dir
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── home
+│   │   │   │   │   └── zouari_omar
+│   │   │   │   │       └── Documents
+│   │   │   │   │           └── Daily
+│   │   │   │   │               └── Projects
+│   │   │   │   │                   └── Crun
+│   │   │   │   │                       └── Crun
+│   │   │   │   │                           └── project
+│   │   │   │   │                               └── src
+│   │   │   │   │                                   ├── lib.c.o
+│   │   │   │   │                                   ├── lib.c.o.d
+│   │   │   │   │                                   ├── main.c.o
+│   │   │   │   │                                   └── main.c.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   └── progress.make
+│   │   │   ├── Makefile2
+│   │   │   ├── Makefile.cmake
+│   │   │   ├── pkgRedirects
+│   │   │   ├── progress.marks
+│   │   │   └── TargetDirectories.txt
+│   │   ├── Crun
+│   │   └── Makefile
 │   ├── debug
 │   │   └── app
 │   ├── release
 │   │   ├── Crun
 │   │   └── Crun.exe
 │   └── test
+│       └── test
 ├── Crun.code-workspace
 ├── doc
 │   └── notes.txt
 ├── LICENSE
-├── Makefile
 ├── pkg
+│   ├── build.sh
+│   ├── CMakeLists.txt
 │   └── color.h
 ├── project
+│   ├── inc
+│   │   └── inc.h
 │   ├── res
 │   │   └── img
 │   │       └── Crun.ico
 │   └── src
+│       ├── lib.c
 │       └── main.c
-└── README.md
+├── README.md
+└── run.sh
 
-12 directories, 11 files
+30 directories, 48 files
 ```
 
 ## How to Use
@@ -42,30 +99,32 @@ To lunch the project on your Linux system, follow these steps:
 
 1. **Clone the Repository**:
 
-    ```sh
-    git clone https://github.com/ZouariOmar/Crun.git
-    ```
+   ```sh
+   git clone https://github.com/ZouariOmar/Crun.git
+   ```
 
 2. **Navigate to the Directory**:
 
-    ```sh
-    cd Crun
-    ```
+   ```sh
+   cd Crun
+   ```
 
 3. **Build the Application**:
 
-    ```sh
-    make
-    ```
+   ```sh
+   make
+   ```
 
 4. **Run the Application**:
 
-    ```sh
-    ./bin/build/app
-    ```
+   ```sh
+   ./bin/build/app
+   ```
 
 ---
+
 ## Download Link: [Crun Project Download](https://www.mediafire.com/file/zxp1u5lp3fnifzi/Crun.zip/file)
+
 ---
 
 ## Contributing
