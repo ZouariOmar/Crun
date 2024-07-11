@@ -85,7 +85,7 @@ void menu(int this) {
   switch (this) {
     //* Show the project intro bar
     case 0:
-      system("echo \"\033[0;32m$(figlet -w $(tput cols) '                             Crun - V1.05')\033[0m\"");
+      system("echo \"\033[0;32m$(figlet -w $(tput cols) '                             Crun - V1.0.5')\033[0m\"");
       printf(
           "%s\t\t\t\t=================== Crun Project ===================\n"
           "\t\t\t\t================== By @ZouariOmar ==================\n"
