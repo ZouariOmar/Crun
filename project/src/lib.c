@@ -54,14 +54,17 @@ void Crun(int *loop, int usr) {
     //? ------------------- WEB PROJECTS PART -------------------
     //* Clone the 'Web Project Enviornment'
     case 7:
-      system("git clone https://github.com/ZouariOmar/Run_Web_Project");
+      //  Init the new project name
+      char new_project_name[PATH_MAX];
+
+      setPrj("Run_Web_Project", new_project_name);
 
       //* Exit the loop
       *loop = 0;
 
       break;
 
-    //* Quit Crun
+    //? ----------------------- QUIT CRUN -----------------------
     case 0:
       printf("\n\n%sSee You Next Time !%s\n\n", green, def);
 
@@ -133,35 +136,21 @@ void menu(int this) {
 }
 
 /**
- * @brief clone the project from github
+ * @brief Clone the project from github
  * @param project_name
  * @param build_sys
  * @param loop
  * @param flag
  */
 void clone_project(char *project_name, char *build_sys, int *loop) {
-  //* Take the project name
+  // Init the new project name
   char new_project_name[PATH_MAX];
-  prj_name(new_project_name);
 
-  //* Init the cmd char var
+  // Rename the project and del some files
+  setPrj(project_name, new_project_name);
+
+  // Init the cmd char var
   char cmd[PATH_MAX];
-
-  //* Clone the project
-  sprintf(cmd, "git clone https://github.com/ZouariOmar/%s.git", project_name);
-  system(cmd);
-
-  //* Set the project name
-  sprintf(cmd, "sudo mv %s '%s'", project_name, new_project_name);
-  system(cmd);
-
-  //* Set the project workspace name
-  sprintf(cmd, "sudo mv '%s'/%s.code-workspace '%s'/'%s'.code-workspace", new_project_name, project_name, new_project_name, new_project_name);
-  system(cmd);
-
-  //* Del the unecessary files
-  sprintf(cmd, "sudo rm -r '%s'/.git '%s'/README.md '%s'/LICENSE", new_project_name, new_project_name, new_project_name);
-  system(cmd);
 
   //* Make run.sh exuded
   sprintf(cmd, "sudo chmod +x '%s'/run.sh", new_project_name);
@@ -175,6 +164,35 @@ void clone_project(char *project_name, char *build_sys, int *loop) {
 
   //* Exit the loop
   *loop = 0;
+}
+
+/**
+ * @brief Set the Project name and del the unecessary files
+ *
+ * @param prj_name
+ */
+void setPrj(char *old_prj_name, char *new_project_name) {
+  //* Take the project name
+  prj_name(new_project_name);
+
+  // Init the cmd char var
+  char cmd[PATH_MAX];
+
+  //* Clone the project
+  sprintf(cmd, "git clone https://github.com/ZouariOmar/%s.git", old_prj_name);
+  system(cmd);
+
+  //* Set the project name
+  sprintf(cmd, "sudo mv %s '%s'", old_prj_name, new_project_name);
+  system(cmd);
+
+  //* Set the project workspace name
+  sprintf(cmd, "sudo mv '%s'/%s.code-workspace '%s'/'%s'.code-workspace", new_project_name, old_prj_name, new_project_name, new_project_name);
+  system(cmd);
+
+  //* Del the unecessary files
+  sprintf(cmd, "sudo rm -r '%s'/.git '%s'/README.md '%s'/LICENSE", new_project_name, new_project_name, new_project_name);
+  system(cmd);
 }
 
 /**

@@ -2,7 +2,6 @@ CMakeFiles/Crun.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/project/
  /home/zouari_omar/Documents/Daily/Projects/Crun/Crun/project/src/main.c \
  /usr/include/stdc-predef.h \
  /home/zouari_omar/Documents/Daily/Projects/Crun/Crun/project/src/../inc/inc.h \
- /home/zouari_omar/Documents/Daily/Projects/Crun/Crun/project/src/../inc/../../pkg/color.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h \
  /usr/include/limits.h \
@@ -68,4 +67,5 @@ CMakeFiles/Crun.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/project/
  /usr/include/x86_64-linux-gnu/bits/confname.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
- /usr/include/x86_64-linux-gnu/bits/unistd_ext.h
+ /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+ /home/zouari_omar/Documents/Daily/Projects/Crun/Crun/project/src/../inc/../../pkg/color.h

@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/bin/build",
+  "command": "/usr/bin/gcc -g -o CMakeFiles/Crun.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/project/src/main.c.o -c /home/zouari_omar/Documents/Daily/Projects/Crun/Crun/project/src/main.c",
+  "file": "/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/project/src/main.c",
+  "output": "CMakeFiles/Crun.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/project/src/main.c.o"
+},
+{
+  "directory": "/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/bin/build",
+  "command": "/usr/bin/gcc -g -o CMakeFiles/Crun.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/project/src/lib.c.o -c /home/zouari_omar/Documents/Daily/Projects/Crun/Crun/project/src/lib.c",
+  "file": "/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/project/src/lib.c",
+  "output": "CMakeFiles/Crun.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/project/src/lib.c.o"
+}
+]

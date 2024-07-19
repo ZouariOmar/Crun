@@ -11,13 +11,14 @@
 #define __INC_H__
 
 //? -------------------- INCLUDE PROTOTYPE DECLARATION PART --------------------
-#include "../../pkg/color.h"
 #include <limits.h>
 #include <linux/limits.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+
+#include "../../pkg/color.h"
 
 //? ----------------------- FUNCTIONS DECLARATION PART -----------------------
 
@@ -26,5 +27,6 @@ void Crun(int *, int);
 void clone_project(char *, char *, int *);
 char *built_sys();
 void prj_name(char *);
+void setPrj(char *, char *);
 
-#endif // __INC_H__
+#endif  // __INC_H__
