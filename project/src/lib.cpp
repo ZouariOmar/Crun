@@ -1,66 +1,101 @@
 /***************************************************
- * @file      lib.c
+ * @file      lib.cpp
  * @author    @ZouariOmar (zouariomar20@gmail.com)
  * @brief     IDE__VSC
  * @version   0.1
- * @date      2024-06-06
+ * @date      29-08-2024
+ * @link      https://github.com/ZouariOmar/Crun
  * @copyright Copyright (c) 2024
  ***************************************************/
 
 //? -------------------- INCLUDE PROTOTYPE DECLARATION PART --------------------
-#include "../inc/inc.h"
+#include "../inc/inc.hpp"
 
 //? ----------------------- FUNCTIONS PROTOTYPE DEV PART -----------------------
 
 /**
- * @brief the main app fn
- * @param loop
- * @param usr
+ * @brief ### Construct a new Crun::Crun object
  */
-void Crun(int *loop, int usr) {
+Crun::Crun()
+    : current_path(filesystem::current_path()), loop(true) {
+  // Clear the CLI
+  // system("clear");
+
+  // Show the project intro bar
+  menu(0);
+}
+
+/**
+ * @brief #### The main main Crun function
+ */
+void Crun::body() {
+  while (loop) {
+    // Show the Crun menu
+    menu(1);
+
+    // Take the usr input option
+    cin >> usr;
+
+    //* Run the program
+    projects();
+  }
+}
+
+/**
+ * @brief ### Destroy the Crun::Crun object
+ */
+Crun::~Crun() {
+  //* Notify the user
+  printf("%sInstallation Complete!%s\n", green, def);
+
+  //* Open the directory
+  system(("xdg-open " + current_path).c_str());
+}
+
+/**
+ * @brief #### Clone the usr project
+ */
+void Crun::projects() {
   switch (usr) {
     //? ------------------- C PROJECTS PART -------------------
     //* Clone the 'Quick C Project Enviornment'
     case 1:
-      clone_project("Quick_C_Project_Environment", (char *)NULL, loop);
+      clone_project("Quick_C_Project_Environment", "");
       break;
 
     //* Clone the 'C Project Enviornment'
     case 2:
-      clone_project("C_Project_Environment", built_sys(), loop);
+      clone_project("C_Project_Environment", built_sys());
       break;
 
     //* Clone the 'C-SDL1.2 Project Enviornment'
     case 3:
-      clone_project("C-SDL1.2_Project_Environment", built_sys(), loop);
+      clone_project("C-SDL1.2_Project_Environment", built_sys());
       break;
 
     //? ------------------- C++ PROJECTS PART -------------------
     //* Clone the 'Quick C++ Project Enviornment'
     case 4:
-      clone_project("Quick_Cpp_Project_Environment", (char *)NULL, loop);
+      clone_project("Quick_Cpp_Project_Environment", "");
       break;
 
     //* Clone the 'C++ Project Enviornment'
     case 5:
-      clone_project("Cpp_Project_Environment", built_sys(), loop);
+      clone_project("Cpp_Project_Environment", built_sys());
       break;
 
     //* Clone the 'C++-Qt Project Enviornment'
     case 6:
-      clone_project("Cpp-Qt_Project_Environment", built_sys(), loop);
+      clone_project("Cpp-Qt_Project_Environment", built_sys());
       break;
 
     //? ------------------- WEB PROJECTS PART -------------------
     //* Clone the 'Web Project Enviornment'
     case 7:
-      //  Init the new project name
-      char new_project_name[PATH_MAX];
-
-      setPrj("Run_Web_Project", new_project_name);
+      setPrj("Run_Web_Project");
 
       //* Exit the loop
-      *loop = 0;
+      loop = false;
 
       break;
 
@@ -81,11 +116,105 @@ void Crun(int *loop, int usr) {
 }
 
 /**
- * @brief All Crun menus
- * @param this
+ * @brief #### Clone + Setup the usr Project
+ * @param project_name 
+ * @param buildSys 
  */
-void menu(int this) {
-  switch (this) {
+void Crun::clone_project(string project_name, string buildSys) {
+  // Setup the project
+  setPrj(project_name);
+
+  // Add the build sys if there is
+  if (!buildSys.empty()) {
+    string cmd = "cmake -S '" + usr_prj + "'/pkg -B '" + usr_prj + "'/bin/build " + buildSys;
+    system(cmd.c_str());
+  }
+
+  //* Exit the loop
+  loop = false;
+}
+
+/**
+ * @brief #### Setup the usr Project
+ * *
+ * - Actions: Delete(rm) | Rename(mv) | clone | changePermission(chmod)
+ * @param old_get_prj_name 
+ */
+void Crun::setPrj(string old_get_prj_name) {
+  //* Take the project name
+  get_prj_name();
+
+  // Init the cmd char var
+  string cmd = "git clone https://github.com/ZouariOmar/" + old_get_prj_name + ".git";
+
+  //* Clone the project
+  system(cmd.c_str());
+
+  // Set the project name
+  cmd = "sudo mv " + old_get_prj_name + " '" + usr_prj + "'";
+  system(cmd.c_str());
+
+  // Set the project workspace name
+  cmd = "sudo mv '" + usr_prj + "'/" + old_get_prj_name +
+        ".code-workspace '" + usr_prj + "/" +
+        usr_prj + ".code-workspace'";
+  system(cmd.c_str());
+
+  // Make run.sh exuded
+  cmd = "sudo chmod +x '" + usr_prj + "'/run.sh";
+  system(cmd.c_str());
+
+  // Del the unecessary files
+  cmd = "sudo rm -r '" + usr_prj + "'/.git '" + usr_prj + "'/README.md '" + usr_prj + "'/LICENSE";
+  system(cmd.c_str());
+}
+
+/**
+ * @brief #### Take the usr project name
+ * @param usr_prj
+ */
+void Crun::get_prj_name() {
+  menu(3);
+
+  //* Take the usr input
+  cin >> usr_prj;
+}
+
+/**
+ * @brief take the build sys type
+ * @return char*
+ */
+string Crun::built_sys() {
+  int usrIn;
+  while (1) {
+    menu(2);
+    cin >> usrIn;
+    switch (usrIn) {
+      case 1:
+        return "";
+
+      case 2:
+        return "-G Ninja";
+
+      case 0:
+        printf("\n\n%sSee You Next Time !%s\n\n", green, def);
+
+        //* Exit the program
+        exit(EXIT_SUCCESS);
+
+      default:
+        printf("\n\n%sInvalid Option !%s\n\n", red, def);
+        break;
+    }
+  }
+}
+
+/**
+ * @brief ### All Crun menus
+ * @param x
+ */
+void Crun::menu(int x) {
+  switch (x) {
     //* Show the project intro bar
     case 0:
       system("echo \"\033[0;32m$(figlet -w $(tput cols) '                             Crun - V1.0.5')\033[0m\"");
@@ -126,120 +255,11 @@ void menu(int this) {
 
     //* Show the project name msg
     case 3:
-      printf("Project Name...");
+      printf("%s\n\nProject Name...%s", yellow, def);
       break;
 
     //* Invalid input
     default:
       break;
   }
-}
-
-/**
- * @brief Clone the project from github
- * @param project_name
- * @param build_sys
- * @param loop
- * @param flag
- */
-void clone_project(char *project_name, char *build_sys, int *loop) {
-  // Init the new project name
-  char new_project_name[PATH_MAX];
-
-  // Rename the project and del some files
-  setPrj(project_name, new_project_name);
-
-  // Init the cmd char var
-  char cmd[PATH_MAX];
-
-  //* Make run.sh exuded
-  sprintf(cmd, "sudo chmod +x '%s'/run.sh", new_project_name);
-  system(cmd);
-
-  //* Add the build sys
-  if (build_sys) {
-    sprintf(cmd, "cmake -S '%s'/pkg -B '%s'/bin/build %s", new_project_name, new_project_name, build_sys);
-    system(cmd);
-  }
-
-  //* Exit the loop
-  *loop = 0;
-}
-
-/**
- * @brief Set the Project name and del the unecessary files
- *
- * @param prj_name
- */
-void setPrj(char *old_prj_name, char *new_project_name) {
-  //* Take the project name
-  prj_name(new_project_name);
-
-  // Init the cmd char var
-  char cmd[PATH_MAX];
-
-  //* Clone the project
-  sprintf(cmd, "git clone https://github.com/ZouariOmar/%s.git", old_prj_name);
-  system(cmd);
-
-  //* Set the project name
-  sprintf(cmd, "sudo mv %s '%s'", old_prj_name, new_project_name);
-  system(cmd);
-
-  //* Set the project workspace name
-  sprintf(cmd, "sudo mv '%s'/%s.code-workspace '%s'/'%s'.code-workspace", new_project_name, old_prj_name, new_project_name, new_project_name);
-  system(cmd);
-
-  //* Del the unecessary files
-  sprintf(cmd, "sudo rm -r '%s'/.git '%s'/README.md '%s'/LICENSE", new_project_name, new_project_name, new_project_name);
-  system(cmd);
-}
-
-/**
- * @brief take the build sys type
- * @return char*
- */
-char *built_sys() {
-  int usr_input;
-  while (1) {
-    menu(2);
-    scanf("%d", &usr_input);
-
-    switch (usr_input) {
-      case 1:
-        return "";
-
-      case 2:
-        return "-G Ninja";
-
-      case 0:
-        printf("\n\n%sSee You Next Time !%s\n\n", green, def);
-
-        //* Exit the program
-        exit(EXIT_SUCCESS);
-
-      default:
-        printf("\n\n%sInvalid Option !%s\n\n", red, def);
-        break;
-    }
-  }
-}
-
-/**
- * @brief take the usr project name
- *
- * @param new_project_name
- */
-void prj_name(char *new_project_name) {
-  printf("%s\n\nProject Name...%s", yellow, def);
-
-  //* Consume the newline char
-  while (getc(stdin) != '\n');
-
-  //* Take the usr input
-  fgets(new_project_name, sizeof(new_project_name) * 200, stdin);
-
-  //* Check if the last char is a newline
-  if (new_project_name[strlen(new_project_name) - 1] == '\n')
-    new_project_name[strlen(new_project_name) - 1] = '\0';
 }

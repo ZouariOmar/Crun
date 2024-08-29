@@ -5,11 +5,11 @@ cmake_minimum_required(VERSION 3.29.3)
 project(Crun)
 
 # set the CMake engine version
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 
-set(SOURCES ../project/src/main.c
-            ../project/src/lib.c
-            ../project/inc/inc.h)
+set(SOURCES ../project/src/main.cpp
+            ../project/src/lib.cpp
+            ../project/inc/inc.hpp)
 
 # add the main.cpp file as a source
 add_executable(${PROJECT_NAME} ${SOURCES})

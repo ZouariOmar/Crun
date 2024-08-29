@@ -5,13 +5,12 @@
 		}
 	],
 	"settings": {
-		"cSpell.words": [
-			"Crun",
-			"SHOWNORMAL"
-		],
+		"cSpell.words": ["Crun", "SHOWNORMAL"],
 		"files.associations": {
 			"res.h": "c",
-			"inc.h": "c"
+			"inc.h": "c",
+			"format": "cpp",
+			"iostream": "cpp"
 		},
 		"editor.tabSize": 2
 	}
