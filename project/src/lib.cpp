@@ -15,11 +15,39 @@
 
 /**
  * @brief ### Construct a new Crun::Crun object
+ * @param P
+ */
+Crun::Crun(string P)
+    : current_path(filesystem::current_path()), loop(true) {
+  // Clear the CLI
+  system("clear");
+
+  regex r("-P([1-9]+)|-G([A-Za-z]+)|-N([A-Za-z]+)");
+  smatch match;
+
+  if (regex_search(P, match, r)) {
+    menu(0);  // Show the project intro bar
+    if (match[1].matched) {
+      usr = stoi(match[1]);
+      projects();
+    } else if (match[2].matched) {
+      buildSys = match[2];
+      body();
+    } else if (match[3].matched) {
+      prj_title = match[3];
+      body();
+    }
+  } else
+    printf("\n\n%sInvalid Option !%s\n\n", red, def);
+}
+
+/**
+ * @brief ### Construct a new Crun::Crun object
  */
 Crun::Crun()
     : current_path(filesystem::current_path()), loop(true) {
   // Clear the CLI
-  // system("clear");
+  system("clear");
 
   // Show the project intro bar
   menu(0);
@@ -42,51 +70,42 @@ void Crun::body() {
 }
 
 /**
- * @brief ### Destroy the Crun::Crun object
- */
-Crun::~Crun() {
-  //* Notify the user
-  printf("%sInstallation Complete!%s\n", green, def);
-
-  //* Open the directory
-  system(("xdg-open " + current_path).c_str());
-}
-
-/**
  * @brief #### Clone the usr project
+ * *
+ * - #### For quick access
  */
 void Crun::projects() {
   switch (usr) {
     //? ------------------- C PROJECTS PART -------------------
     //* Clone the 'Quick C Project Enviornment'
     case 1:
-      clone_project("Quick_C_Project_Environment", "");
+      clone_project("Quick_C_Project_Environment");
       break;
 
     //* Clone the 'C Project Enviornment'
     case 2:
-      clone_project("C_Project_Environment", built_sys());
+      clone_project("C_Project_Environment");
       break;
 
     //* Clone the 'C-SDL1.2 Project Enviornment'
     case 3:
-      clone_project("C-SDL1.2_Project_Environment", built_sys());
+      clone_project("C-SDL1.2_Project_Environment");
       break;
 
     //? ------------------- C++ PROJECTS PART -------------------
     //* Clone the 'Quick C++ Project Enviornment'
     case 4:
-      clone_project("Quick_Cpp_Project_Environment", "");
+      clone_project("Quick_Cpp_Project_Environment");
       break;
 
     //* Clone the 'C++ Project Enviornment'
     case 5:
-      clone_project("Cpp_Project_Environment", built_sys());
+      clone_project("Cpp_Project_Environment");
       break;
 
     //* Clone the 'C++-Qt Project Enviornment'
     case 6:
-      clone_project("Cpp-Qt_Project_Environment", built_sys());
+      clone_project("Cpp-Qt_Project_Environment");
       break;
 
     //? ------------------- WEB PROJECTS PART -------------------
@@ -116,19 +135,21 @@ void Crun::projects() {
 }
 
 /**
- * @brief #### Clone + Setup the usr Project
- * @param project_name 
- * @param buildSys 
+ * @brief #### Clone + Setup the usr Project without build sys
+ * @param project_name
  */
-void Crun::clone_project(string project_name, string buildSys) {
+void Crun::clone_project(string project_name) {
   // Setup the project
   setPrj(project_name);
 
-  // Add the build sys if there is
+  // Add the build sys
   if (!buildSys.empty()) {
-    string cmd = "cmake -S '" + usr_prj + "'/pkg -B '" + usr_prj + "'/bin/build " + buildSys;
+    string cmd = "cmake -S '" + prj_title + "'/pkg -B '" + prj_title + "'/bin/build -G '" + buildSys + "'";
     system(cmd.c_str());
   }
+
+  // Installation is complete successfully
+  notify();
 
   //* Exit the loop
   loop = false;
@@ -138,63 +159,69 @@ void Crun::clone_project(string project_name, string buildSys) {
  * @brief #### Setup the usr Project
  * *
  * - Actions: Delete(rm) | Rename(mv) | clone | changePermission(chmod)
- * @param old_get_prj_name 
+ * @param old_prj_name
  */
-void Crun::setPrj(string old_get_prj_name) {
-  //* Take the project name
+void Crun::setPrj(string old_prj_name) {
+  //* Get the built system (if they exist)
+  get_built_sys();
+
+  //* Get the project name
   get_prj_name();
 
   // Init the cmd char var
-  string cmd = "git clone https://github.com/ZouariOmar/" + old_get_prj_name + ".git";
+  string cmd = "git clone https://github.com/ZouariOmar/" + old_prj_name + ".git";
 
   //* Clone the project
   system(cmd.c_str());
 
   // Set the project name
-  cmd = "sudo mv " + old_get_prj_name + " '" + usr_prj + "'";
+  cmd = "sudo mv " + old_prj_name + " '" + prj_title + "'";
   system(cmd.c_str());
 
   // Set the project workspace name
-  cmd = "sudo mv '" + usr_prj + "'/" + old_get_prj_name +
-        ".code-workspace '" + usr_prj + "/" +
-        usr_prj + ".code-workspace'";
+  cmd = "sudo mv '" + prj_title + "'/" + old_prj_name +
+        ".code-workspace '" + prj_title + "/" +
+        prj_title + ".code-workspace'";
   system(cmd.c_str());
 
   // Make run.sh exuded
-  cmd = "sudo chmod +x '" + usr_prj + "'/run.sh";
+  cmd = "sudo chmod +x '" + prj_title + "'/run.sh";
   system(cmd.c_str());
 
   // Del the unecessary files
-  cmd = "sudo rm -r '" + usr_prj + "'/.git '" + usr_prj + "'/README.md '" + usr_prj + "'/LICENSE";
+  cmd = "sudo rm -r '" + prj_title + "'/.git '" + prj_title + "'/README.md '" + prj_title + "'/LICENSE";
   system(cmd.c_str());
 }
 
 /**
- * @brief #### Take the usr project name
- * @param usr_prj
+ * @brief ### Get the usr project name
+ * @param prj_title
  */
 void Crun::get_prj_name() {
+  if (!prj_title.empty()) return;
   menu(3);
 
   //* Take the usr input
-  cin >> usr_prj;
+  cin >> prj_title;
 }
 
 /**
- * @brief take the build sys type
- * @return char*
+ * @brief ### Get the build sys type
  */
-string Crun::built_sys() {
+void Crun::get_built_sys() {
+  if (usr == 1 || usr == 4 || usr == 7 || !buildSys.empty()) return;
   int usrIn;
   while (1) {
     menu(2);
     cin >> usrIn;
     switch (usrIn) {
       case 1:
-        return "";
+        buildSys = "Unix Makefiles";
+        return;
 
       case 2:
-        return "-G Ninja";
+        buildSys = "Ninja";
+        return;
 
       case 0:
         printf("\n\n%sSee You Next Time !%s\n\n", green, def);
@@ -210,6 +237,20 @@ string Crun::built_sys() {
 }
 
 /**
+ * @brief ### Installation Complete successfully notification
+ */
+void Crun::notify() {
+  //* Notify the user
+  printf("%sInstallation Complete!%s\n", green, def);
+
+  //* Open the directory
+  system(("xdg-open " + current_path).c_str());
+
+  //* Open the project with VSC
+  system(("code " + prj_title + "/" + prj_title + ".code-workspace").c_str());
+}
+
+/**
  * @brief ### All Crun menus
  * @param x
  */
@@ -217,7 +258,7 @@ void Crun::menu(int x) {
   switch (x) {
     //* Show the project intro bar
     case 0:
-      system("echo \"\033[0;32m$(figlet -w $(tput cols) '                             Crun - V1.0.5')\033[0m\"");
+      system("echo \"\033[0;32m$(figlet -w $(tput cols) '                             Crun - V1.1.0')\033[0m\"");
       printf(
           "%s\t\t\t\t=================== Crun Project ===================\n"
           "\t\t\t\t================== By @ZouariOmar ==================\n"

