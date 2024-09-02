@@ -12,7 +12,8 @@
 			"format": "cpp",
 			"iostream": "cpp",
 			"regex": "cpp",
-			"string": "cpp"
+			"string": "cpp",
+			"qlabel": "cpp"
 		},
 		"editor.tabSize": 2
 	}

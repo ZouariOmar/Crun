@@ -8,7 +8,7 @@
                 "/usr/include/x86_64-linux-gnu/qt5/QtWidgets",
                 "/usr/include/x86_64-linux-gnu/qt5/QtGui",
                 "/usr/include/x86_64-linux-gnu/qt5/QtCore",
-                "${workspaceFolder}/Crun GUI/bin/build/app_autogen/45XTKQHPNQ"
+                "${workspaceFolder}/bin/build/test_autogen/include"
             ],
             "compilerPath": "/usr/bin/gcc",
             "cStandard": "${default}",

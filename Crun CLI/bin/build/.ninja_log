@@ -1,0 +1,5 @@
+# ninja log v6
+1	6	1725266363710720882	clean	a31eedcededa8236
+1	1380	1725266363722721567	CMakeFiles/Crun.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_CLI/project/src/main.cpp.o	77a7c37472ce7bd1
+1	4089	1725266363722721567	CMakeFiles/Crun.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_CLI/project/src/lib.cpp.o	7f0ce2bc0db679d0
+4089	4262	1725266367810954690	Crun	1c344dbe97339eaa

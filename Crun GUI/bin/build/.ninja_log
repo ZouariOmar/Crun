@@ -1,0 +1,52 @@
+# ninja log v6
+1	47	1725313372888089384	build.ninja	2cdcfdf2b135c929
+901	1180	1725317164841828980	app	c2cc1a1d6802c954
+122	901	1725317164061774957	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/mainwindow.cpp.o	ec16359a09977a41
+121	874	1725317164061774957	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/main.cpp.o	ada5b0fbae596c9b
+2	121	1725317164053774403	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/mocs_compilation.cpp	82a2915c06f18270
+121	880	1725317164061774957	CMakeFiles/app.dir/app_autogen/mocs_compilation.cpp.o	3635638efcbc209e
+2	121	1725317164053774403	app_autogen/mocs_compilation.cpp	82a2915c06f18270
+2	121	1725317164053774403	app_autogen/timestamp	82a2915c06f18270
+2	121	1725317164053774403	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/timestamp	82a2915c06f18270
+15	18	1725317163933766090	clean	a31eedcededa8236
+3	15	1725317163921765260	CMakeFiles/clean.additional	a16c0306c56fa3cc
+2	10	1725317223337860234	CMakeFiles/clean.additional	a16c0306c56fa3cc
+10	13	1725317223345860783	clean	a31eedcededa8236
+1	120	1725317223461868741	app_autogen/timestamp	82a2915c06f18270
+1	120	1725317223461868741	app_autogen/mocs_compilation.cpp	82a2915c06f18270
+1	120	1725317223461868741	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/timestamp	82a2915c06f18270
+1	120	1725317223461868741	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/mocs_compilation.cpp	82a2915c06f18270
+120	910	1725317223469869290	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/main.cpp.o	ada5b0fbae596c9b
+120	916	1725317223469869290	CMakeFiles/app.dir/app_autogen/mocs_compilation.cpp.o	3635638efcbc209e
+121	963	1725317223469869290	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/mainwindow.cpp.o	ec16359a09977a41
+963	1169	1725317224309926916	app	c2cc1a1d6802c954
+3	13	1725317256976162600	CMakeFiles/clean.additional	a16c0306c56fa3cc
+13	16	1725317256984163146	clean	a31eedcededa8236
+3	130	1725317257116172160	app_autogen/timestamp	82a2915c06f18270
+3	130	1725317257116172160	app_autogen/mocs_compilation.cpp	82a2915c06f18270
+3	130	1725317257116172160	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/timestamp	82a2915c06f18270
+3	130	1725317257116172160	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/mocs_compilation.cpp	82a2915c06f18270
+130	831	1725317257124172707	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/main.cpp.o	ada5b0fbae596c9b
+130	843	1725317257124172707	CMakeFiles/app.dir/app_autogen/mocs_compilation.cpp.o	3635638efcbc209e
+130	866	1725317257124172707	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/mainwindow.cpp.o	ec16359a09977a41
+866	1131	1725317257856222698	app	c2cc1a1d6802c954
+3	18	1725317302575268222	CMakeFiles/clean.additional	a16c0306c56fa3cc
+18	20	1725317302591269309	clean	a31eedcededa8236
+2	121	1725317302707277189	app_autogen/timestamp	82a2915c06f18270
+2	121	1725317302707277189	app_autogen/mocs_compilation.cpp	82a2915c06f18270
+2	121	1725317302707277189	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/timestamp	82a2915c06f18270
+2	121	1725317302707277189	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/mocs_compilation.cpp	82a2915c06f18270
+122	809	1725317302715277733	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/main.cpp.o	ada5b0fbae596c9b
+121	830	1725317302715277733	CMakeFiles/app.dir/app_autogen/mocs_compilation.cpp.o	3635638efcbc209e
+122	840	1725317302715277733	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/mainwindow.cpp.o	ec16359a09977a41
+840	1028	1725317303435326644	app	c2cc1a1d6802c954
+3	15	1725317379206715428	CMakeFiles/clean.additional	a16c0306c56fa3cc
+15	17	1725317379218715258	clean	a31eedcededa8236
+1	115	1725317379330713672	app_autogen/timestamp	82a2915c06f18270
+1	115	1725317379330713672	app_autogen/mocs_compilation.cpp	82a2915c06f18270
+1	115	1725317379330713672	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/timestamp	82a2915c06f18270
+1	115	1725317379330713672	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/mocs_compilation.cpp	82a2915c06f18270
+115	830	1725317379338713559	CMakeFiles/app.dir/app_autogen/mocs_compilation.cpp.o	3635638efcbc209e
+116	844	1725317379338713559	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/main.cpp.o	ada5b0fbae596c9b
+116	857	1725317379338713559	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/mainwindow.cpp.o	ec16359a09977a41
+857	1046	1725317380082703041	app	c2cc1a1d6802c954
