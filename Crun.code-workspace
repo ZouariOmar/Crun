@@ -10,7 +10,9 @@
 			"res.h": "c",
 			"inc.h": "c",
 			"format": "cpp",
-			"iostream": "cpp"
+			"iostream": "cpp",
+			"regex": "cpp",
+			"string": "cpp"
 		},
 		"editor.tabSize": 2
 	}

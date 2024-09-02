@@ -33,7 +33,7 @@ using namespace std;
 class Crun {
  private:
   // Prv vars declaration part
-  unsigned usr;         // Usr choices
+  int usr;         // Usr choices
   bool loop;            // Crun program run/exit var
   string current_path;  // Current usr path
   string prj_title;     // The usr project title
@@ -41,17 +41,21 @@ class Crun {
 
   // Prv function declaration part
   void menu(int);
+  void body();
   void projects();
   void clone_project(string);
   void setPrj(string);
   void get_prj_name();
   void get_built_sys();
   void notify();
+  bool is_flag(string);
 
  public:
   Crun();
   Crun(string);
-  void body();
+  Crun(string, string);
+  Crun(string, string, string);
+
 };  // Crun class
 
 #endif  // __INC_HPP__

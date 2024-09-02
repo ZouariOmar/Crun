@@ -20,12 +20,14 @@
  * @return int
  */
 int main(int argc, char const **argv) {
-  if (argc == 1) {
+  if (argc == 1)
     Crun c;
-    c.body();
-  } else if (argc == 3) {
+  else if (argc == 3)
     Crun c(string{argv[1]} + string{argv[2]});
-  }
+  else if (argc == 5)
+    Crun c(string{argv[1]} + string{argv[2]}, string{argv[3]} + string {argv[4]});
+  else if (argc == 7)
+    Crun c(string{argv[1]} + string{argv[2]}, string{argv[3]} + string{argv[4]}, string{argv[5]} + string{argv[6]});
 
   return 0;
 }

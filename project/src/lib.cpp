@@ -15,29 +15,61 @@
 
 /**
  * @brief ### Construct a new Crun::Crun object
- * @param P
+ * @param f1
+ * @param f2
+ * @param f3
  */
-Crun::Crun(string P)
-    : current_path(filesystem::current_path()), loop(true) {
+Crun::Crun(string f1, string f2, string f3)
+    : current_path(filesystem::current_path()), loop(true), usr(-1) {
   // Clear the CLI
   system("clear");
 
-  regex r("-P([1-9]+)|-G([A-Za-z]+)|-N([A-Za-z]+)");
-  smatch match;
+  // Show the project intro bar
+  menu(0);
 
-  if (regex_search(P, match, r)) {
-    menu(0);  // Show the project intro bar
-    if (match[1].matched) {
-      usr = stoi(match[1]);
-      projects();
-    } else if (match[2].matched) {
-      buildSys = match[2];
-      body();
-    } else if (match[3].matched) {
-      prj_title = match[3];
-      body();
-    }
-  } else
+  // Check the flag
+  if (is_flag(f1) && is_flag(f2) && is_flag(f3))
+    body();
+  else
+    printf("\n\n%sInvalid Option !%s\n\n", red, def);
+}
+
+/**
+ * @brief ### Construct a new Crun::Crun object
+ * @param f1
+ * @param f2
+ */
+Crun::Crun(string f1, string f2)
+    : current_path(filesystem::current_path()), loop(true), usr(-1) {
+  // Clear the CLI
+  system("clear");
+
+  // Show the project intro bar
+  menu(0);
+
+  // Check the flag
+  if (is_flag(f1) && is_flag(f2))
+    body();
+  else
+    printf("\n\n%sInvalid Option !%s\n\n", red, def);
+}
+
+/**
+ * @brief ### Construct a new Crun::Crun object
+ * @param f1
+ */
+Crun::Crun(string f1)
+    : current_path(filesystem::current_path()), loop(true), usr(-1) {
+  // Clear the CLI
+  system("clear");
+
+  // Show the project intro bar
+  menu(0);
+
+  // Check the flag
+  if (is_flag(f1))
+    body();
+  else
     printf("\n\n%sInvalid Option !%s\n\n", red, def);
 }
 
@@ -45,12 +77,14 @@ Crun::Crun(string P)
  * @brief ### Construct a new Crun::Crun object
  */
 Crun::Crun()
-    : current_path(filesystem::current_path()), loop(true) {
+    : current_path(filesystem::current_path()), loop(true), usr(-1) {
   // Clear the CLI
   system("clear");
 
   // Show the project intro bar
   menu(0);
+
+  body();
 }
 
 /**
@@ -58,15 +92,35 @@ Crun::Crun()
  */
 void Crun::body() {
   while (loop) {
-    // Show the Crun menu
-    menu(1);
+    if (usr == -1) {
+      // Show the Crun menu
+      menu(1);
 
-    // Take the usr input option
-    cin >> usr;
+      // Take the usr input option
+      cin >> usr;
+    }
 
     //* Run the program
     projects();
   }
+}
+
+bool Crun::is_flag(string str) {
+  // Set the regex pattern
+  regex r("-P([1-9]+)|-G([A-Za-z]+)|-N([A-Za-z]+)");
+  smatch match;
+
+  if (regex_search(str, match, r)) {
+    if (match[1].matched)
+      usr = stoi(match[1]);
+    else if (match[2].matched)
+      buildSys = match[2];
+    else if (match[3].matched)
+      prj_title = match[3];
+    return true;
+  }
+
+  return false;
 }
 
 /**
