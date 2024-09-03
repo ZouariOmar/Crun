@@ -45,13 +45,14 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(180, 280, 131, 21));
-        groupBox = new QGroupBox(centralwidget);
-        groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        groupBox->setGeometry(QRect(10, 20, 471, 231));
+        label->setGeometry(QRect(160, 280, 161, 21));
         QFont font;
         font.setFamily(QString::fromUtf8("Fira Code"));
         font.setPointSize(10);
+        label->setFont(font);
+        groupBox = new QGroupBox(centralwidget);
+        groupBox->setObjectName(QString::fromUtf8("groupBox"));
+        groupBox->setGeometry(QRect(10, 20, 471, 231));
         groupBox->setFont(font);
         lineEdit = new QLineEdit(groupBox);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
@@ -110,6 +111,10 @@ public:
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
+
+        comboBox->setCurrentIndex(-1);
+        comboBox_2->setCurrentIndex(-1);
+
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi

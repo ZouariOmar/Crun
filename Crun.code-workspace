@@ -13,7 +13,9 @@
 			"iostream": "cpp",
 			"regex": "cpp",
 			"string": "cpp",
-			"qlabel": "cpp"
+			"qlabel": "cpp",
+			"chrono": "cpp",
+			"variant": "cpp"
 		},
 		"editor.tabSize": 2
 	}

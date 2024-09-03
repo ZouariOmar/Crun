@@ -334,7 +334,10 @@
  mdp:/usr/include/x86_64-linux-gnu/qt5/QtGui/qtransform.h
  mdp:/usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h
  mdp:/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow
+ mdp:/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMessageBox
+ mdp:/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qdialog.h
  mdp:/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmainwindow.h
+ mdp:/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmessagebox.h
  mdp:/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h
  mdp:/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtabwidget.h
  mdp:/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgets-config.h
