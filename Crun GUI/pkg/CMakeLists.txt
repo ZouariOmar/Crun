@@ -15,9 +15,11 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 set(PROJECT_SOURCES
         ../project/src/main.cpp
         ../project/src/mainwindow.cpp
+        ../project/src/suAccess.cpp
+        ../project/inc/suAccess.hpp
         ../project/inc/mainwindow.hpp
         ../project/res/mainWindow.ui
-
+        ../project/res/suAccess.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

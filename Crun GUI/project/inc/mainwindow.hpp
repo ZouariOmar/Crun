@@ -16,6 +16,7 @@
 #include <QMessageBox>
 #include <QProcess>
 #include <filesystem>
+#include <iostream>
 
 #include "../res/ui_mainWindow.h"
 
@@ -54,15 +55,14 @@ class MainWindow : public QMainWindow, public CrunGUI {
 
  private:
   Ui::MainWindow *ui;
+  void notify(MainWindow *);
 
  private slots:
   void on_pushButton_clicked();
   void on_comboBox_currentIndexChanged(int);
 
-  void notify(MainWindow *);
-
  public:
-  MainWindow(QWidget *parent = nullptr);
+  MainWindow(QWidget *);
   ~MainWindow();
 };
-#endif  // MAINWINDOW_H
+#endif  // __MAINWINDOW_HPP__

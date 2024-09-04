@@ -68,6 +68,14 @@ build CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Cru
   OBJECT_DIR = CMakeFiles/app.dir
   OBJECT_FILE_DIR = CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src
 
+build CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/suAccess.cpp.o: CXX_COMPILER__app_unscanned_ /home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun$ GUI/project/src/suAccess.cpp || cmake_object_order_depends_target_app
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/suAccess.cpp.o.d
+  FLAGS = -std=gnu++17 -fPIC
+  INCLUDES = -I"/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/include" -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
+  OBJECT_DIR = CMakeFiles/app.dir
+  OBJECT_FILE_DIR = CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target app
@@ -76,7 +84,7 @@ build CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Cru
 #############################################
 # Link the executable app
 
-build app: CXX_EXECUTABLE_LINKER__app_ CMakeFiles/app.dir/app_autogen/mocs_compilation.cpp.o CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/main.cpp.o CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/mainwindow.cpp.o | /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.10 /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.10 /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.10 || app_autogen app_autogen_timestamp_deps
+build app: CXX_EXECUTABLE_LINKER__app_ CMakeFiles/app.dir/app_autogen/mocs_compilation.cpp.o CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/main.cpp.o CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/mainwindow.cpp.o CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/suAccess.cpp.o | /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.10 /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.10 /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.10 || app_autogen app_autogen_timestamp_deps
   LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.10  /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.10  /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.10
   OBJECT_DIR = CMakeFiles/app.dir
   POST_BUILD = :
@@ -160,7 +168,7 @@ build app_autogen_timestamp_deps: phony
 #############################################
 # Utility command for app_autogen
 
-build app_autogen: phony CMakeFiles/app_autogen app_autogen/project/res/ui_mainWindow.h app_autogen/timestamp app_autogen/mocs_compilation.cpp app_autogen_timestamp_deps
+build app_autogen: phony CMakeFiles/app_autogen app_autogen/project/res/ui_mainWindow.h app_autogen/project/res/ui_suAccess.h app_autogen/timestamp app_autogen/mocs_compilation.cpp app_autogen_timestamp_deps
 
 
 #############################################
@@ -177,7 +185,7 @@ build app_autogen/timestamp app_autogen/mocs_compilation.cpp | ${cmake_ninja_wor
 #############################################
 # Phony custom command for CMakeFiles/app_autogen
 
-build CMakeFiles/app_autogen app_autogen/project/res/ui_mainWindow.h | ${cmake_ninja_workdir}CMakeFiles/app_autogen ${cmake_ninja_workdir}app_autogen/project/res/ui_mainWindow.h: phony app_autogen/timestamp || app_autogen_timestamp_deps
+build CMakeFiles/app_autogen app_autogen/project/res/ui_mainWindow.h app_autogen/project/res/ui_suAccess.h | ${cmake_ninja_workdir}CMakeFiles/app_autogen ${cmake_ninja_workdir}app_autogen/project/res/ui_mainWindow.h ${cmake_ninja_workdir}app_autogen/project/res/ui_suAccess.h: phony app_autogen/timestamp || app_autogen_timestamp_deps
 
 # =============================================================================
 # Target aliases.

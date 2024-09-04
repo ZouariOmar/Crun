@@ -1,5 +1,5 @@
 /***************************************************
- * @file      mainwindow.cpp
+ * @file      suAccess.hpp
  * @author    @ZouariOmar (zouariomar20@gmail.com)
  * @brief     IDE__VSC
  * @version   0.1
@@ -7,24 +7,34 @@
  * @copyright Copyright (c) 2024
  ***************************************************/
 
-// MyDialog.h
-#ifndef MYDIALOG_H
-#define MYDIALOG_H
+#ifndef __SUACCESS_HPP__
+#define __SUACCESS_HPP__
 
 #include <QDialog>
+#include <QProcess>
+#include <iostream>
 
-// Include the generated UI header file
 #include "../res/ui_suAccess.h"
 
-class MyDialog : public QDialog {
+namespace Ui {
+class suAccess;
+}
+
+class suAccess : public QDialog {
   Q_OBJECT
 
- public:
-  explicit MyDialog(QWidget *parent = nullptr);
-  ~MyDialog();
+ public slots:
+  void on_pushButton_clicked();
+
+ private slots:
 
  private:
-  Ui::MyDialog *ui;
+  Ui::Form* ui;
+
+ public:
+  std::string usrPass;
+  suAccess(QWidget*);
+  ~suAccess();
 };
 
-#endif  // MYDIALOG_H
+#endif  // SuAccess_H

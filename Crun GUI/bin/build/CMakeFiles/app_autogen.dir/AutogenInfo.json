@@ -80,6 +80,12 @@
 			"MU",
 			"45XTKQHPNQ/moc_mainwindow.cpp",
 			null
+		],
+		[
+			"/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/project/inc/suAccess.hpp",
+			"MU",
+			"45XTKQHPNQ/moc_suAccess.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -140,6 +146,11 @@
 		],
 		[
 			"/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/project/src/mainwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/project/src/suAccess.cpp",
 			"MU",
 			null
 		]

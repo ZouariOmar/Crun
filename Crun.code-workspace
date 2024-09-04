@@ -15,7 +15,8 @@
 			"string": "cpp",
 			"qlabel": "cpp",
 			"chrono": "cpp",
-			"variant": "cpp"
+			"variant": "cpp",
+			"filesystem": "cpp"
 		},
 		"editor.tabSize": 2
 	}

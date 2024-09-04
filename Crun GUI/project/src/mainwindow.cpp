@@ -10,6 +10,8 @@
 //? ------------------------------ INCLUDE PROTOTYPE DECLARATION PART ------------------------------
 #include "../inc/mainwindow.hpp"
 
+#include "../inc/suAccess.hpp"
+
 //? --------------------------------- FUNCTIONS PROTOTYPE DEV PART ---------------------------------
 
 /**
@@ -59,7 +61,10 @@ void MainWindow::on_pushButton_clicked() {
   c.pEnv = ui->comboBox->currentText();
   (with_buildSys()) ? c.bSys = ui->comboBox_2->currentText() : c.bSys = "";
 
-  //* Get the sudo password
+  // Get the sudo password using suAccess
+  suAccess *as = new suAccess(this);
+  as->exec();
+  delete as;
 
   //* Setup the project
   setup_prj();
@@ -107,8 +112,8 @@ void CrunGUI::setup_prj() {
 
   // Set the project workspace name
   std::string cmd = "sudo mv '" + c.pTitle.toStdString() + "'/" + oldPrj +
-        ".code-workspace '" + c.pTitle.toStdString() + "/" +
-        c.pTitle.toStdString() + ".code-workspace'";
+                    ".code-workspace '" + c.pTitle.toStdString() + "/" +
+                    c.pTitle.toStdString() + ".code-workspace'";
   system(cmd.c_str());
 
   // Make run.sh exuded
