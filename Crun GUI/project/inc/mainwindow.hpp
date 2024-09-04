@@ -14,32 +14,19 @@
 #include <QDebug>
 #include <QMainWindow>
 #include <QMessageBox>
+#include <QProcess>
+#include <filesystem>
 
 #include "../res/ui_mainWindow.h"
 
-//? ------------------------------ COLORS PROTOTYPE DECLARATION PART ------------------------------
-/*
- * TEXT COLORS
- ** define COLOR "ANSI CODE"...
- * BACKGROUND COLORS
- ** define bgCOLOR "ANSI CODE"...
- */
-
-//? -------------------------------  MSG PROTOTYPE DECLARATION PART -------------------------------
-/*
- * ERROR_MSG
- ** define errorMsgXX...
- * SUCCESS_MSG
- ** define successMsgXX...
- */
-
 //? ------------------------------ STRUCT PROTOTYPE DECLARATION PART ------------------------------
-struct CrunStrut {  //? Crun Structure
-  QString pTitle,   // Project title
-      pEnv,         // Project enviornment
-      bSys;         // Build system
-  int pId,          // Project ID (QComboBox index holder)
-      bId;          // Build system ID (QComboBox index holder)
+struct CrunStrut {    //? Crun Structure
+  QString pTitle,     // Project title
+      pEnv,           // Project enviornment
+      bSys;           // Build system
+  std::string cPath;  // Current usr path
+  int pId,            // Project ID (QComboBox index holder)
+      bId;            // Build system ID (QComboBox index holder)
 };
 
 //? ----------------------------- FUNCTIONS PROTOTYPE DECLARATION PART -----------------------------
@@ -56,6 +43,9 @@ class CrunGUI {
 
   // Protected Custom methods declaration part
   inline bool with_buildSys();
+  void setup_prj();
+  std::string getOldPrjName();
+  void clone_prj(std::string);
 
 };  // CrunGUI class
 
@@ -68,6 +58,8 @@ class MainWindow : public QMainWindow, public CrunGUI {
  private slots:
   void on_pushButton_clicked();
   void on_comboBox_currentIndexChanged(int);
+
+  void notify(MainWindow *);
 
  public:
   MainWindow(QWidget *parent = nullptr);

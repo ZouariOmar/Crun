@@ -16,6 +16,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 
@@ -34,18 +35,19 @@ public:
     QLabel *label_5;
     QComboBox *comboBox;
     QComboBox *comboBox_2;
+    QPlainTextEdit *plainTextEdit;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(491, 302);
+        MainWindow->resize(491, 433);
         MainWindow->setStyleSheet(QString::fromUtf8(""));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(160, 280, 161, 21));
+        label->setGeometry(QRect(160, 410, 161, 21));
         QFont font;
         font.setFamily(QString::fromUtf8("Fira Code"));
         font.setPointSize(10);
@@ -108,6 +110,20 @@ public:
         comboBox_2->setGeometry(QRect(190, 140, 261, 26));
         comboBox_2->setFont(font);
         comboBox_2->setCursor(QCursor(Qt::PointingHandCursor));
+        plainTextEdit = new QPlainTextEdit(centralwidget);
+        plainTextEdit->setObjectName(QString::fromUtf8("plainTextEdit"));
+        plainTextEdit->setGeometry(QRect(10, 260, 471, 141));
+        plainTextEdit->setFont(font);
+        plainTextEdit->viewport()->setProperty("cursor", QVariant(QCursor(Qt::IBeamCursor)));
+        plainTextEdit->setAutoFillBackground(false);
+        plainTextEdit->setFrameShape(QFrame::Shape::Box);
+        plainTextEdit->setFrameShadow(QFrame::Shadow::Sunken);
+        plainTextEdit->setMidLineWidth(0);
+        plainTextEdit->setHorizontalScrollBarPolicy(Qt::ScrollBarPolicy::ScrollBarAlwaysOff);
+        plainTextEdit->setTabChangesFocus(true);
+        plainTextEdit->setReadOnly(false);
+        plainTextEdit->setOverwriteMode(false);
+        plainTextEdit->setBackgroundVisible(false);
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
@@ -139,7 +155,7 @@ public:
         comboBox->setItemText(5, QCoreApplication::translate("MainWindow", "C++-Qt Project Enviornment", nullptr));
         comboBox->setItemText(6, QCoreApplication::translate("MainWindow", "Web Project Enviornment", nullptr));
 
-        comboBox_2->setItemText(0, QCoreApplication::translate("MainWindow", "Make", nullptr));
+        comboBox_2->setItemText(0, QCoreApplication::translate("MainWindow", "Unix Makefiles", nullptr));
         comboBox_2->setItemText(1, QCoreApplication::translate("MainWindow", "Ninja", nullptr));
 
     } // retranslateUi
