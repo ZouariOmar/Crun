@@ -2,26 +2,35 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::WindowModality::ApplicationModal</enum>
+  </property>
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>491</width>
-    <height>433</height>
+    <height>285</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string/>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::TabShape::Triangular</enum>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
       <x>160</x>
-      <y>410</y>
+      <y>260</y>
       <width>161</width>
       <height>21</height>
      </rect>
@@ -302,50 +311,20 @@
      </item>
     </widget>
    </widget>
-   <widget class="QPlainTextEdit" name="plainTextEdit">
+   <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>260</y>
-      <width>471</width>
-      <height>141</height>
+      <x>150</x>
+      <y>50</y>
+      <width>211</width>
+      <height>171</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <family>Fira Code</family>
-      <pointsize>10</pointsize>
-     </font>
+    <property name="text">
+     <string/>
     </property>
-    <property name="cursor" stdset="0">
-     <cursorShape>IBeamCursor</cursorShape>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::Shape::Box</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Shadow::Sunken</enum>
-    </property>
-    <property name="midLineWidth">
-     <number>0</number>
-    </property>
-    <property name="horizontalScrollBarPolicy">
-     <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="tabChangesFocus">
-     <bool>true</bool>
-    </property>
-    <property name="readOnly">
-     <bool>false</bool>
-    </property>
-    <property name="overwriteMode">
-     <bool>false</bool>
-    </property>
-    <property name="backgroundVisible">
-     <bool>false</bool>
+    <property name="pixmap">
+     <pixmap>../../../Crun CLI/project/res/img/Crun.ico</pixmap>
     </property>
    </widget>
   </widget>

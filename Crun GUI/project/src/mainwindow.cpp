@@ -22,14 +22,26 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
   ui->setupUi(this);
 
-  //* Set windows title
-  this->setWindowTitle("Crun");
+  // Initially hide groupBox
+  ui->groupBox->setVisible(false);
+
+  // Set window title
+  setWindowTitle("Crun");
+
+  // Ensure UI is properly initialized before starting the timer
+  QTimer::singleShot(3000, this, [this]() {
+    // Close label_6 after 3 seconds
+    ui->label_6->close();
+
+    // Show groupBox (after setting the timer)
+    ui->groupBox->setVisible(true);
+  });
 
   //* Set the current usr path
   c.cPath = std::filesystem::current_path();
 
   //* Crun GUI Stylesheet part
-  this->setStyleSheet(
+  setStyleSheet(
       "QPushButton:hover { background-color: red; }");
 }
 
@@ -64,13 +76,17 @@ void MainWindow::on_pushButton_clicked() {
   // Get the sudo password using suAccess
   suAccess *as = new suAccess(this);
   as->exec();
+
+  if (as->is_access) {
+    //* Setup the project
+    setup_prj();
+
+    //* Notify the usr
+    notify(this);
+  }
+
+  // Del suAccess var
   delete as;
-
-  //* Setup the project
-  setup_prj();
-
-  //* Notify the usr
-  notify(this);
 }
 
 /**
@@ -188,11 +204,11 @@ std::string CrunGUI::getOldPrjName() {
  */
 void MainWindow::notify(MainWindow *t) {
   //* Notify the user
-  QMessageBox::about(t, "Notificaion", "Installation Complete!\n");
+  QMessageBox::information(t, "Notificaion", "Installation Complete!\n");
 
   //* Open the directory
-  system(("xdg-open " + c.cPath).c_str());
+  system(("xdg-open \"" + c.cPath + "\"").c_str());
 
   //* Open the project with VSC
-  system(("code " + c.pTitle.toStdString() + "/" + c.pTitle.toStdString() + ".code-workspace").c_str());
+  system(("code '" + c.pTitle.toStdString() + "'/'" + c.pTitle.toStdString() + "'.code-workspace").c_str());
 }

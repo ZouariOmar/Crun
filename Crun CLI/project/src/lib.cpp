@@ -298,7 +298,7 @@ void Crun::notify() {
   printf("%sInstallation Complete!%s\n", green, def);
 
   //* Open the directory
-  system(("xdg-open " + current_path).c_str());
+  system(("xdg-open \"" + current_path + "\"").c_str());
 
   //* Open the project with VSC
   system(("code " + prj_title + "/" + prj_title + ".code-workspace").c_str());

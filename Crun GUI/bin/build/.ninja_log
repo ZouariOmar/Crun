@@ -1,77 +1,58 @@
 # ninja log v6
-4	29	1725474615570077749	CMakeFiles/clean.additional	a16c0306c56fa3cc
-29	35	1725474615594078425	clean	a31eedcededa8236
-6	363	1725474336042374324	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/timestamp	82a2915c06f18270
-364	2521	1725474336062374861	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/suAccess.cpp.o	ef78c016caff9525
-6	363	1725474336042374324	app_autogen/timestamp	82a2915c06f18270
-6	363	1725474336042374324	app_autogen/mocs_compilation.cpp	82a2915c06f18270
-363	3152	1725474336062374861	CMakeFiles/app.dir/app_autogen/mocs_compilation.cpp.o	3635638efcbc209e
-6	363	1725474336042374324	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/mocs_compilation.cpp	82a2915c06f18270
-363	2993	1725474336062374861	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/main.cpp.o	ada5b0fbae596c9b
-364	3242	1725474336062374861	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/mainwindow.cpp.o	ec16359a09977a41
-3242	3856	1725474338938452139	app	332b0b9c9892c789
-2	127	1725457201668351044	build.ninja	2cdcfdf2b135c929
-5	369	1725474615954088556	app_autogen/timestamp	82a2915c06f18270
-5	369	1725474615954088556	app_autogen/mocs_compilation.cpp	82a2915c06f18270
-5	369	1725474615954088556	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/timestamp	82a2915c06f18270
-5	369	1725474615954088556	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/mocs_compilation.cpp	82a2915c06f18270
-371	2509	1725474615974089118	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/suAccess.cpp.o	ef78c016caff9525
-370	2999	1725474615974089118	CMakeFiles/app.dir/app_autogen/mocs_compilation.cpp.o	3635638efcbc209e
-370	3060	1725474615974089118	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/main.cpp.o	ada5b0fbae596c9b
-370	3191	1725474615974089118	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/mainwindow.cpp.o	ec16359a09977a41
-3191	3732	1725474618794168497	app	332b0b9c9892c789
-4	28	1725474959459919888	CMakeFiles/clean.additional	a16c0306c56fa3cc
-28	35	1725474959483920584	clean	a31eedcededa8236
-5	366	1725474959839930909	app_autogen/timestamp	82a2915c06f18270
-5	366	1725474959839930909	app_autogen/mocs_compilation.cpp	82a2915c06f18270
-5	366	1725474959839930909	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/timestamp	82a2915c06f18270
-5	366	1725474959839930909	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/mocs_compilation.cpp	82a2915c06f18270
-367	2608	1725474959863931605	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/suAccess.cpp.o	ef78c016caff9525
-367	3242	1725474959863931605	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/main.cpp.o	ada5b0fbae596c9b
-366	3273	1725474959859931490	CMakeFiles/app.dir/app_autogen/mocs_compilation.cpp.o	3635638efcbc209e
-367	3422	1725474959863931605	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/mainwindow.cpp.o	ec16359a09977a41
-3422	3956	1725474962916020136	app	332b0b9c9892c789
-4	31	1725475128812854286	CMakeFiles/clean.additional	a16c0306c56fa3cc
-31	37	1725475128840855105	clean	a31eedcededa8236
-6	517	1725475129340869734	app_autogen/timestamp	82a2915c06f18270
-6	517	1725475129340869734	app_autogen/mocs_compilation.cpp	82a2915c06f18270
-6	517	1725475129340869734	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/timestamp	82a2915c06f18270
-6	517	1725475129340869734	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/mocs_compilation.cpp	82a2915c06f18270
-518	3865	1725475129368870553	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/suAccess.cpp.o	ef78c016caff9525
-517	4364	1725475129368870553	CMakeFiles/app.dir/app_autogen/mocs_compilation.cpp.o	3635638efcbc209e
-518	4479	1725475129368870553	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/main.cpp.o	ada5b0fbae596c9b
-518	4535	1725475129368870553	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/mainwindow.cpp.o	ec16359a09977a41
-4535	5063	1725475133384988063	app	332b0b9c9892c789
-3	25	1725475162845850684	CMakeFiles/clean.additional	a16c0306c56fa3cc
-25	30	1725475162865851270	clean	a31eedcededa8236
-5	351	1725475163205861232	app_autogen/timestamp	82a2915c06f18270
-5	351	1725475163205861232	app_autogen/mocs_compilation.cpp	82a2915c06f18270
-5	351	1725475163205861232	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/timestamp	82a2915c06f18270
-5	351	1725475163205861232	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/mocs_compilation.cpp	82a2915c06f18270
-353	2498	1725475163225861819	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/suAccess.cpp.o	ef78c016caff9525
-352	2981	1725475163225861819	CMakeFiles/app.dir/app_autogen/mocs_compilation.cpp.o	3635638efcbc209e
-352	3080	1725475163225861819	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/main.cpp.o	ada5b0fbae596c9b
-352	3226	1725475163225861819	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/mainwindow.cpp.o	ec16359a09977a41
-3226	3755	1725475166101946087	app	332b0b9c9892c789
-3	25	1725475249276387085	CMakeFiles/clean.additional	a16c0306c56fa3cc
-25	30	1725475249300387791	clean	a31eedcededa8236
-6	382	1725475249672398725	app_autogen/timestamp	82a2915c06f18270
-6	382	1725475249672398725	app_autogen/mocs_compilation.cpp	82a2915c06f18270
-6	382	1725475249672398725	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/timestamp	82a2915c06f18270
-6	382	1725475249672398725	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/mocs_compilation.cpp	82a2915c06f18270
-383	2725	1725475249692399313	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/suAccess.cpp.o	ef78c016caff9525
-383	3164	1725475249692399313	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/main.cpp.o	ada5b0fbae596c9b
-382	3208	1725475249688399196	CMakeFiles/app.dir/app_autogen/mocs_compilation.cpp.o	3635638efcbc209e
-383	3313	1725475249692399313	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/mainwindow.cpp.o	ec16359a09977a41
-3313	3867	1725475252620485381	app	332b0b9c9892c789
-3	28	1725475616019219919	CMakeFiles/clean.additional	a16c0306c56fa3cc
-28	35	1725475616047220749	clean	a31eedcededa8236
-5	382	1725475616415231662	app_autogen/timestamp	82a2915c06f18270
-5	382	1725475616415231662	app_autogen/mocs_compilation.cpp	82a2915c06f18270
-5	382	1725475616415231662	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/timestamp	82a2915c06f18270
-5	382	1725475616415231662	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/mocs_compilation.cpp	82a2915c06f18270
-383	2541	1725475616439232373	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/suAccess.cpp.o	ef78c016caff9525
-382	3051	1725475616439232373	CMakeFiles/app.dir/app_autogen/mocs_compilation.cpp.o	3635638efcbc209e
-382	3118	1725475616439232373	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/main.cpp.o	ada5b0fbae596c9b
-382	3150	1725475616439232373	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/mainwindow.cpp.o	ec16359a09977a41
-3150	3651	1725475619207314458	app	332b0b9c9892c789
+4	126	1725548166125495002	build.ninja	2cdcfdf2b135c929
+457	546	1725548019845145667	CMakeFiles/app.dir/app_autogen/C422TNXMHS/qrc_icon.cpp.o	a9e68c7c92879a34
+26	31	1725563913574643141	clean	a31eedcededa8236
+7	393	1725563913958646746	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/timestamp	82a2915c06f18270
+395	2753	1725563913978646934	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/suAccess.cpp.o	ef78c016caff9525
+5	26	1725563913554642953	CMakeFiles/clean.additional	a16c0306c56fa3cc
+7	393	1725563913958646746	app_autogen/timestamp	82a2915c06f18270
+7	393	1725563913958646746	app_autogen/mocs_compilation.cpp	82a2915c06f18270
+394	3048	1725563913978646934	CMakeFiles/app.dir/app_autogen/mocs_compilation.cpp.o	3635638efcbc209e
+7	393	1725563913958646746	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/mocs_compilation.cpp	82a2915c06f18270
+394	3062	1725563913978646934	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/main.cpp.o	ada5b0fbae596c9b
+394	3418	1725563913978646934	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/mainwindow.cpp.o	ec16359a09977a41
+3418	3992	1725563917002675430	app	332b0b9c9892c789
+5	30	1725563945766954347	CMakeFiles/clean.additional	a16c0306c56fa3cc
+30	36	1725563945790954585	clean	a31eedcededa8236
+6	381	1725563946162958283	app_autogen/timestamp	82a2915c06f18270
+6	381	1725563946162958283	app_autogen/mocs_compilation.cpp	82a2915c06f18270
+6	381	1725563946162958283	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/timestamp	82a2915c06f18270
+6	381	1725563946162958283	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/mocs_compilation.cpp	82a2915c06f18270
+382	2710	1725563946182958482	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/suAccess.cpp.o	ef78c016caff9525
+381	2874	1725563946182958482	CMakeFiles/app.dir/app_autogen/mocs_compilation.cpp.o	3635638efcbc209e
+382	2881	1725563946182958482	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/main.cpp.o	ada5b0fbae596c9b
+382	3072	1725563946182958482	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/mainwindow.cpp.o	ec16359a09977a41
+3072	3701	1725563948870985275	app	332b0b9c9892c789
+5	28	1725563960811105719	CMakeFiles/clean.additional	a16c0306c56fa3cc
+28	34	1725563960831105922	clean	a31eedcededa8236
+7	424	1725563961243110120	app_autogen/timestamp	82a2915c06f18270
+7	424	1725563961243110120	app_autogen/mocs_compilation.cpp	82a2915c06f18270
+7	424	1725563961243110120	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/timestamp	82a2915c06f18270
+7	424	1725563961243110120	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/mocs_compilation.cpp	82a2915c06f18270
+426	2841	1725563961267110365	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/suAccess.cpp.o	ef78c016caff9525
+424	2985	1725563961267110365	CMakeFiles/app.dir/app_autogen/mocs_compilation.cpp.o	3635638efcbc209e
+424	3030	1725563961267110365	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/main.cpp.o	ada5b0fbae596c9b
+425	3277	1725563961267110365	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/mainwindow.cpp.o	ec16359a09977a41
+3277	3814	1725563964119139494	app	332b0b9c9892c789
+5	30	1725564080744433938	CMakeFiles/clean.additional	a16c0306c56fa3cc
+30	35	1725564080772434271	clean	a31eedcededa8236
+6	473	1725564081224439651	app_autogen/timestamp	82a2915c06f18270
+6	473	1725564081224439651	app_autogen/mocs_compilation.cpp	82a2915c06f18270
+6	473	1725564081224439651	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/timestamp	82a2915c06f18270
+6	473	1725564081224439651	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/mocs_compilation.cpp	82a2915c06f18270
+474	2951	1725564081252439985	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/suAccess.cpp.o	ef78c016caff9525
+473	3378	1725564081252439985	CMakeFiles/app.dir/app_autogen/mocs_compilation.cpp.o	3635638efcbc209e
+474	3574	1725564081252439985	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/main.cpp.o	ada5b0fbae596c9b
+474	3927	1725564081252439985	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/mainwindow.cpp.o	ec16359a09977a41
+3927	4509	1725564084708481205	app	332b0b9c9892c789
+8	34	1725564150573294397	CMakeFiles/clean.additional	a16c0306c56fa3cc
+34	40	1725564150597294703	clean	a31eedcededa8236
+4	399	1725564150981299590	app_autogen/timestamp	82a2915c06f18270
+4	399	1725564150981299590	app_autogen/mocs_compilation.cpp	82a2915c06f18270
+4	399	1725564150981299590	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/timestamp	82a2915c06f18270
+4	399	1725564150981299590	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/mocs_compilation.cpp	82a2915c06f18270
+400	2897	1725564151009299946	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/suAccess.cpp.o	ef78c016caff9525
+400	3034	1725564151009299946	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/main.cpp.o	ada5b0fbae596c9b
+399	3038	1725564151005299895	CMakeFiles/app.dir/app_autogen/mocs_compilation.cpp.o	3635638efcbc209e
+400	3709	1725564151009299946	CMakeFiles/app.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun_GUI/project/src/mainwindow.cpp.o	ec16359a09977a41
+3709	4267	1725564154317342125	app	332b0b9c9892c789

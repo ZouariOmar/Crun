@@ -16,7 +16,6 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 
@@ -35,19 +34,22 @@ public:
     QLabel *label_5;
     QComboBox *comboBox;
     QComboBox *comboBox_2;
-    QPlainTextEdit *plainTextEdit;
+    QLabel *label_6;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(491, 433);
+        MainWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
+        MainWindow->setEnabled(true);
+        MainWindow->resize(491, 285);
         MainWindow->setStyleSheet(QString::fromUtf8(""));
+        MainWindow->setTabShape(QTabWidget::TabShape::Triangular);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(160, 410, 161, 21));
+        label->setGeometry(QRect(160, 260, 161, 21));
         QFont font;
         font.setFamily(QString::fromUtf8("Fira Code"));
         font.setPointSize(10);
@@ -110,20 +112,10 @@ public:
         comboBox_2->setGeometry(QRect(190, 140, 261, 26));
         comboBox_2->setFont(font);
         comboBox_2->setCursor(QCursor(Qt::PointingHandCursor));
-        plainTextEdit = new QPlainTextEdit(centralwidget);
-        plainTextEdit->setObjectName(QString::fromUtf8("plainTextEdit"));
-        plainTextEdit->setGeometry(QRect(10, 260, 471, 141));
-        plainTextEdit->setFont(font);
-        plainTextEdit->viewport()->setProperty("cursor", QVariant(QCursor(Qt::IBeamCursor)));
-        plainTextEdit->setAutoFillBackground(false);
-        plainTextEdit->setFrameShape(QFrame::Shape::Box);
-        plainTextEdit->setFrameShadow(QFrame::Shadow::Sunken);
-        plainTextEdit->setMidLineWidth(0);
-        plainTextEdit->setHorizontalScrollBarPolicy(Qt::ScrollBarPolicy::ScrollBarAlwaysOff);
-        plainTextEdit->setTabChangesFocus(true);
-        plainTextEdit->setReadOnly(false);
-        plainTextEdit->setOverwriteMode(false);
-        plainTextEdit->setBackgroundVisible(false);
+        label_6 = new QLabel(centralwidget);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+        label_6->setGeometry(QRect(150, 50, 211, 171));
+        label_6->setPixmap(QPixmap(QString::fromUtf8("../../../Crun CLI/project/res/img/Crun.ico")));
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
@@ -137,7 +129,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        MainWindow->setWindowTitle(QString());
         label->setText(QCoreApplication::translate("MainWindow", "Crun - Version 1.1.0", nullptr));
         groupBox->setTitle(QCoreApplication::translate("MainWindow", "Project Configuration", nullptr));
         lineEdit->setInputMask(QString());
@@ -158,6 +150,7 @@ public:
         comboBox_2->setItemText(0, QCoreApplication::translate("MainWindow", "Unix Makefiles", nullptr));
         comboBox_2->setItemText(1, QCoreApplication::translate("MainWindow", "Ninja", nullptr));
 
+        label_6->setText(QString());
     } // retranslateUi
 
 };

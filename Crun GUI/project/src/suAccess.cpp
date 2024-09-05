@@ -10,8 +10,11 @@
 #include "../inc/suAccess.hpp"
 
 suAccess::suAccess(QWidget* parent)
-    : QDialog(parent), ui(new Ui::Form), usrPass("") {
+    : QDialog(parent), ui(new Ui::Form), is_access(false) {
   ui->setupUi(this);
+
+  // Disable the label_2 (Incorrect Password msg)
+  ui->label_2->setVisible(false);
 }
 
 suAccess::~suAccess() {
@@ -21,7 +24,7 @@ suAccess::~suAccess() {
 /**
  * @brief ### The ok button click event
  * *
- * 
+ *
  * ! #### For the second input (or more) the `exitCode()` always equal to 0
  */
 void suAccess::on_pushButton_clicked() {
@@ -43,12 +46,21 @@ void suAccess::on_pushButton_clicked() {
 
   // Check the exit code to determine if the password was correct
   std::cout << process->exitCode() << std::endl;
-  if (process->exitCode() == 0) {
-    usrPass = password.toStdString();  // Correct password
-    this->close();                     // Close the suAccess window
-  } else 
-    usrPass = "";  // Incorrect password or error
+  if (!process->exitCode()) {
+    is_access = true;
+    close();  // Close the suAccess window
+  }
+
+  // Show the "Incorrect Password" msg
+  ui->label_2->setVisible(true);
 
   // Restore the QLineEdit echo mode to Password to hide the entered password
   ui->lineEdit->setEchoMode(QLineEdit::Password);
+}
+
+/**
+ * @brief ### Detect the lineEdit selections
+ */
+void suAccess::on_lineEdit_editingFinished() {
+  ui->label_2->setVisible(false);
 }

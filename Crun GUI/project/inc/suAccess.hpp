@@ -25,6 +25,7 @@ class suAccess : public QDialog {
 
  public slots:
   void on_pushButton_clicked();
+  void on_lineEdit_editingFinished();
 
  private slots:
 
@@ -32,7 +33,7 @@ class suAccess : public QDialog {
   Ui::Form* ui;
 
  public:
-  std::string usrPass;
+  bool is_access;
   suAccess(QWidget*);
   ~suAccess();
 };

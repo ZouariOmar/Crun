@@ -26,6 +26,7 @@ public:
     QPushButton *pushButton_2;
     QLineEdit *lineEdit;
     QLabel *label;
+    QLabel *label_2;
 
     void setupUi(QWidget *Form)
     {
@@ -71,6 +72,13 @@ public:
         label->setTextFormat(Qt::TextFormat::AutoText);
         label->setScaledContents(false);
         label->setWordWrap(false);
+        label_2 = new QLabel(Form);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setEnabled(true);
+        label_2->setGeometry(QRect(310, 30, 151, 20));
+        label_2->setFont(font);
+        label_2->setStyleSheet(QString::fromUtf8("color: rgb(255, 0, 0);"));
+        label_2->setFrameShadow(QFrame::Shadow::Plain);
 
         retranslateUi(Form);
         QObject::connect(pushButton_2, SIGNAL(clicked()), Form, SLOT(close()));
@@ -93,6 +101,7 @@ public:
         lineEdit->setText(QString());
         lineEdit->setPlaceholderText(QCoreApplication::translate("Form", "Password...", nullptr));
         label->setText(QCoreApplication::translate("Form", "Sudo Password:", nullptr));
+        label_2->setText(QCoreApplication::translate("Form", "Incorrect Password", nullptr));
     } // retranslateUi
 
 };

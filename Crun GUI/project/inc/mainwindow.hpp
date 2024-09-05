@@ -15,6 +15,7 @@
 #include <QMainWindow>
 #include <QMessageBox>
 #include <QProcess>
+#include <QTimer>
 #include <filesystem>
 #include <iostream>
 
