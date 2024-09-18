@@ -11,12 +11,16 @@
 #define MAINWINDOW_HPP
 
 //? ----------------------------- INCLUDE PROTOTYPE DECLARATION PART -----------------------------
+
 #include <QDebug>
 #include <QMainWindow>
 #include <QMessageBox>
+#include <QPixmap>
 #include <QProcess>
 #include <QTimer>
 #include <filesystem>
+
+//! Testing part
 #include <iostream>
 
 #include "../res/ui_mainWindow.h"

@@ -1,0 +1,106 @@
+.
+├── bin
+│   ├── build
+│   │   ├── app
+│   │   ├── app_autogen
+│   │   │   ├── 45XTKQHPNQ
+│   │   │   │   ├── moc_mainwindow.cpp
+│   │   │   │   ├── moc_mainwindow.cpp.d
+│   │   │   │   ├── moc_suAccess.cpp
+│   │   │   │   └── moc_suAccess.cpp.d
+│   │   │   ├── C422TNXMHS
+│   │   │   │   └── qrc_Crun.cpp
+│   │   │   ├── deps
+│   │   │   ├── include
+│   │   │   ├── moc_predefs.h
+│   │   │   ├── mocs_compilation.cpp
+│   │   │   ├── res
+│   │   │   │   ├── ui_mainWindow.h
+│   │   │   │   └── ui_suAccess.h
+│   │   │   └── timestamp
+│   │   ├── build.ninja
+│   │   ├── CMakeCache.txt
+│   │   ├── CMakeFiles
+│   │   │   ├── 3.29.6
+│   │   │   │   ├── CMakeCXXCompiler.cmake
+│   │   │   │   ├── CMakeDetermineCompilerABI_CXX.bin
+│   │   │   │   ├── CMakeSystem.cmake
+│   │   │   │   └── CompilerIdCXX
+│   │   │   │       ├── a.out
+│   │   │   │       ├── CMakeCXXCompilerId.cpp
+│   │   │   │       └── tmp
+│   │   │   ├── app_autogen.dir
+│   │   │   │   ├── AutogenInfo.json
+│   │   │   │   ├── AutogenUsed.txt
+│   │   │   │   ├── AutoRcc_Crun_C422TNXMHS_Info.json
+│   │   │   │   ├── AutoRcc_Crun_C422TNXMHS_Lock.lock
+│   │   │   │   ├── AutoRcc_Crun_C422TNXMHS_Used.txt
+│   │   │   │   ├── AutoRcc_icon_C422TNXMHS_Info.json
+│   │   │   │   ├── AutoRcc_icon_C422TNXMHS_Lock.lock
+│   │   │   │   ├── AutoRcc_icon_C422TNXMHS_Used.txt
+│   │   │   │   └── ParseCache.txt
+│   │   │   ├── app.dir
+│   │   │   │   ├── app_autogen
+│   │   │   │   │   ├── C422TNXMHS
+│   │   │   │   │   │   ├── qrc_Crun.cpp.o
+│   │   │   │   │   │   └── qrc_icon.cpp.o
+│   │   │   │   │   └── mocs_compilation.cpp.o
+│   │   │   │   └── home
+│   │   │   │       └── zouari_omar
+│   │   │   │           └── Documents
+│   │   │   │               └── Daily
+│   │   │   │                   └── Projects
+│   │   │   │                       └── Crun
+│   │   │   │                           └── Crun
+│   │   │   │                               └── Crun_GUI
+│   │   │   │                                   └── project
+│   │   │   │                                       └── src
+│   │   │   │                                           ├── main.cpp.o
+│   │   │   │                                           ├── mainwindow.cpp.o
+│   │   │   │                                           └── suAccess.cpp.o
+│   │   │   ├── clean_additional.cmake
+│   │   │   ├── cmake.check_cache
+│   │   │   ├── CMakeConfigureLog.yaml
+│   │   │   ├── d
+│   │   │   ├── pkgRedirects
+│   │   │   ├── rules.ninja
+│   │   │   └── TargetDirectories.txt
+│   │   └── cmake_install.cmake
+│   ├── debug
+│   │   └── debug
+│   ├── release
+│   │   └── Crun
+│   └── test
+│       └── test
+├── Crun GUI.code-workspace
+├── doc
+│   ├── pdf
+│   │   └── NONE.pdf
+│   └── TODO.md
+├── download
+│   └── download
+├── pkg
+│   └── CMakeLists.txt
+├── project
+│   ├── doc
+│   │   ├── doc
+│   │   └── tree.txt
+│   ├── inc
+│   │   ├── mainwindow.hpp
+│   │   └── suAccess.hpp
+│   ├── qss style
+│   │   └── style.qss
+│   ├── res
+│   │   ├── Crun.qrc
+│   │   ├── imgs
+│   │   │   ├── Crun.ico
+│   │   │   └── Crun.png
+│   │   ├── mainWindow.ui
+│   │   └── suAccess.ui
+│   └── src
+│       ├── main.cpp
+│       ├── mainwindow.cpp
+│       └── suAccess.cpp
+└── run.sh
+
+42 directories, 62 files

@@ -22,23 +22,31 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
   ui->setupUi(this);
 
-  // Initially hide groupBox
-  ui->groupBox->setVisible(false);
-
   // Set window title
   setWindowTitle("Crun");
 
-  // Ensure UI is properly initialized before starting the timer
+  // Set the window icon
+  setWindowIcon(QIcon(":/imgs/Crun.ico"));
+
+  //* Set the current usr path
+  c.cPath = std::filesystem::current_path();
+
+  // Initially hide groupBox
+  ui->groupBox->setVisible(false);
+
+  // Crun intro image
+  QPixmap pixmap(":/imgs/Crun.png");  //* Use the resource path
+
+  ui->label_6->setPixmap(pixmap);
+  ui->label_6->show();
+
+  // Show the "Crun" image for 3s
   QTimer::singleShot(3000, this, [this]() {
-    // Close label_6 after 3 seconds
     ui->label_6->close();
 
     // Show groupBox (after setting the timer)
     ui->groupBox->setVisible(true);
   });
-
-  //* Set the current usr path
-  c.cPath = std::filesystem::current_path();
 
   //* Crun GUI Stylesheet part
   setStyleSheet(

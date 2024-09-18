@@ -22,6 +22,9 @@
   <property name="styleSheet">
    <string notr="true"/>
   </property>
+  <property name="animated">
+   <bool>true</bool>
+  </property>
   <property name="tabShape">
    <enum>QTabWidget::TabShape::Triangular</enum>
   </property>
@@ -322,9 +325,6 @@
     </property>
     <property name="text">
      <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>../../../Crun CLI/project/res/img/Crun.ico</pixmap>
     </property>
    </widget>
   </widget>

@@ -5,6 +5,8 @@ app_autogen/timestamp: \
 	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun\ GUI/pkg/CMakeLists.txt \
 	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun\ GUI/project/inc/mainwindow.hpp \
 	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun\ GUI/project/inc/suAccess.hpp \
+	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun\ GUI/project/res/Crun.qrc \
+	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun\ GUI/project/res/CrunIco.qrc \
 	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun\ GUI/project/src/main.cpp \
 	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun\ GUI/project/src/mainwindow.cpp \
 	/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun\ GUI/project/src/suAccess.cpp \
@@ -343,6 +345,7 @@ app_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qvarlengtharray.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtGui/QPixmap \
 	/usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtGui/qcolor.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtGui/qcursor.h \

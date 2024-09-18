@@ -44,6 +44,7 @@ public:
         MainWindow->setEnabled(true);
         MainWindow->resize(491, 285);
         MainWindow->setStyleSheet(QString::fromUtf8(""));
+        MainWindow->setAnimated(true);
         MainWindow->setTabShape(QTabWidget::TabShape::Triangular);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
@@ -115,7 +116,6 @@ public:
         label_6 = new QLabel(centralwidget);
         label_6->setObjectName(QString::fromUtf8("label_6"));
         label_6->setGeometry(QRect(150, 50, 211, 171));
-        label_6->setPixmap(QPixmap(QString::fromUtf8("../../../Crun CLI/project/res/img/Crun.ico")));
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);

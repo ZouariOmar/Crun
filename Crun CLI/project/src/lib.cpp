@@ -256,6 +256,7 @@ void Crun::get_prj_name() {
   menu(3);
 
   //* Take the usr input
+  while (getchar() != '\n');
   getline(cin, prj_title);
 }
 
@@ -301,7 +302,7 @@ void Crun::notify() {
   system(("xdg-open \"" + current_path + "\"").c_str());
 
   //* Open the project with VSC
-  system(("code " + prj_title + "/" + prj_title + ".code-workspace").c_str());
+  system(("code '" + prj_title + "'/'" + prj_title + "'.code-workspace").c_str());
 }
 
 /**

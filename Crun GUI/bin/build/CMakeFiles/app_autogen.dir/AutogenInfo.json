@@ -67,7 +67,9 @@
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake",
 		"/usr/share/cmake-3.29/Modules/CMakeParseArguments.cmake",
-		"/usr/share/cmake-3.29/Modules/GNUInstallDirs.cmake"
+		"/usr/share/cmake-3.29/Modules/GNUInstallDirs.cmake",
+		"/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/project/res/Crun.qrc",
+		"/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/project/res/CrunIco.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/pkg",
 	"CROSS_CONFIG" : false,

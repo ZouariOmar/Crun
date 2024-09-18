@@ -20,6 +20,8 @@ set(PROJECT_SOURCES
         ../project/inc/mainwindow.hpp
         ../project/res/mainWindow.ui
         ../project/res/suAccess.ui
+        ../project/res/Crun.qrc
+        ../project/res/CrunIco.qrc
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

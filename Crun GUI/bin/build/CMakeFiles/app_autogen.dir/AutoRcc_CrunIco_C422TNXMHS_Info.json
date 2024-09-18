@@ -9,17 +9,17 @@
 	"INCLUDE_DIR" : "/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/app_autogen/include",
 	"INPUTS" : 
 	[
-		"/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun CLI/project/res/img/Crun.ico"
+		"/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/project/res/imgs/Crun.ico"
 	],
-	"LOCK_FILE" : "/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/CMakeFiles/app_autogen.dir/AutoRcc_icon_C422TNXMHS_Lock.lock",
+	"LOCK_FILE" : "/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/CMakeFiles/app_autogen.dir/AutoRcc_CrunIco_C422TNXMHS_Lock.lock",
 	"MULTI_CONFIG" : false,
-	"OPTIONS" : [ "-name", "icon" ],
+	"OPTIONS" : [ "-name", "CrunIco" ],
 	"OUTPUT_CHECKSUM" : "C422TNXMHS",
-	"OUTPUT_NAME" : "qrc_icon.cpp",
+	"OUTPUT_NAME" : "qrc_CrunIco.cpp",
 	"RCC_EXECUTABLE" : "/usr/lib/qt5/bin/rcc",
 	"RCC_LIST_OPTIONS" : [ "--list" ],
-	"SETTINGS_FILE" : "/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/CMakeFiles/app_autogen.dir/AutoRcc_icon_C422TNXMHS_Used.txt",
-	"SOURCE" : "/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/project/res/icon.qrc",
+	"SETTINGS_FILE" : "/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/bin/build/CMakeFiles/app_autogen.dir/AutoRcc_CrunIco_C422TNXMHS_Used.txt",
+	"SOURCE" : "/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/Crun GUI/project/res/CrunIco.qrc",
 	"USE_BETTER_GRAPH" : false,
 	"VERBOSITY" : 0
 }
