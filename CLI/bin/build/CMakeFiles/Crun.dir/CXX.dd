@@ -1,0 +1,5 @@
+ninja_dyndep_version = 1.0
+build CMakeFiles/Crun.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/CLI/project/src/main.cpp.o: dyndep
+
+build CMakeFiles/Crun.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/CLI/project/src/lib.cpp.o: dyndep
+
