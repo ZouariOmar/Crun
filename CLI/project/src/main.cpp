@@ -21,6 +21,5 @@
  */
 int main(int argc, char const **argv) {
   __lance__(argc, argv);
-
   return 0;
 }

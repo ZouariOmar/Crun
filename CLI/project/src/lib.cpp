@@ -27,29 +27,6 @@ void __lance__(int argc, const char **argv) {
     Crun c(string{argv[1]} + string{argv[2]});
   else if (argc == 5)
     Crun c(string{argv[1]} + string{argv[2]}, string{argv[3]} + string{argv[4]});
-  else if (argc == 7)
-    Crun c(string{argv[1]} + string{argv[2]}, string{argv[3]} + string{argv[4]}, string{argv[5]} + string{argv[6]});
-}
-
-/**
- * @brief ### Construct a new Crun::Crun object
- * @param f1 string
- * @param f2 string
- * @param f3 string
- */
-Crun::Crun(string f1, string f2, string f3)
-    : current_path(filesystem::current_path()), loop(true), usr(-1) {
-  // Clear the CLI
-  system("clear");
-
-  // Show the project intro bar
-  menu(0);
-
-  // Check the flag
-  if (is_flag(f1) && is_flag(f2) && is_flag(f3))
-    body();
-  else
-    printf("\n\n%sInvalid Option !%s\n\n", red, def);
 }
 
 /**
@@ -97,7 +74,7 @@ Crun::Crun(string f1)
 Crun::Crun()
     : current_path(filesystem::current_path()), loop(true), usr(-1) {
   // Clear the CLI
-  ////system("clear");
+  system("clear");
 
   // Show the project intro bar
   menu(0);
@@ -125,16 +102,14 @@ void Crun::body() {
 
 bool Crun::is_flag(string str) {
   // Set the regex pattern
-  regex r("-P([1-9]+)|-G([A-Za-z]+)|-N([A-Za-z]+)");
+  regex r("-P([1-9]+)|-N([A-Za-z]+)");
   smatch match;
 
   if (regex_search(str, match, r)) {
     if (match[1].matched)
       usr = stoi(match[1]);
     else if (match[2].matched)
-      buildSys = match[2];
-    else if (match[3].matched)
-      prj_title = match[3];
+      prj_title = match[2];
     return true;
   }
 
@@ -142,7 +117,7 @@ bool Crun::is_flag(string str) {
 }
 
 /**
- * @brief #### Clone the usr project
+ * @brief #### Clone project using the Cpkg template URL
  * *
  * - #### For quick access
  */
@@ -151,58 +126,57 @@ void Crun::projects() {
   loop = false;
 
   switch (usr) {
-    //? ------------------- C/C++ PROJECTS PART -------------------
-    //* Clone the 'Quick_C-CPP_Project_Env'
-    case 1:
-      clone_project("Quick_C-CPP_Project_Env");
-      break;
+  //? ------------------- C/C++ PROJECTS PART -------------------
+  //* Clone the 'Quick_C-CPP_Project_Env'
+  case 1:
+    clone_project("Quick_C-CPP_Project_Env");
+    break;
 
-    //* Clone the 'C-CPP_Project_Env'
-    case 2:
-      clone_project("C-CPP_Project_Env");
-      break;
+  //* Clone the 'C-CPP_Project_Env'
+  case 2:
+    clone_project("C-CPP_Project_Env");
+    break;
 
-    //* Clone the 'C-SDL1.2 Project Enviornment'
-    case 3:
-      clone_project("C-SDL1.2_Project_Environment");
-      break;
+  //* Clone the 'SDL1.2-SDL2.0_C-CPP_Project_Env'
+  case 3:
+    clone_project("SDL1.2-SDL2.0_C-CPP_Project_Env");
+    break;
 
-    //? ------------------- C++ PROJECTS PART -------------------
-    //* Clone the 'Quick C++ Project Enviornment'
-    case 4:
-      clone_project("Quick_Cpp_Project_Environment");
-      break;
+  //* Clone the 'QT5/QT6 C/C++ Project Env'
+  case 4:
+    clone_project("QT5-QT6_C-CPP_Project_Env");
+    break;
 
-    //* Clone the 'C++ Project Enviornment'
-    case 5:
-      clone_project("Cpp_Project_Environment");
-      break;
+  //* Clone the 'C++ Project Enviornment'
+  case 5:
+    clone_project("Cpp_Project_Environment");
+    break;
 
-    //* Clone the 'C++-Qt Project Enviornment'
-    case 6:
-      clone_project("Cpp-Qt_Project_Environment");
-      break;
+  //* Clone the 'C++-Qt Project Enviornment'
+  case 6:
+    clone_project("Cpp-Qt_Project_Environment");
+    break;
 
-    //? ------------------- WEB PROJECTS PART -------------------
-    //* Clone the 'Web Project Enviornment'
-    case 7:
-      setPrj("Run_Web_Project");
+  //? ------------------- WEB PROJECTS PART -------------------
+  //* Clone the 'Web Project Enviornment'
+  case 7:
+    clone_project("Run_Web_Project");
 
-      break;
+    break;
 
-    //? ----------------------- QUIT CRUN -----------------------
-    case 0:
-      EXIT_SUCCESS_MSG;
-      exit(EXIT_SUCCESS);  //* Exit the program
+  //? ----------------------- QUIT CRUN -----------------------
+  case 0:
+    EXIT_SUCCESS_MSG;
+    exit(EXIT_SUCCESS); //* Exit the program
 
-      break;
+    break;
 
-    //* Invalid option
-    default:
-      INVALID_OPTION_MSG;
-      usr = -1;     // Reset the usr choice
-      loop = true;  // Rest in the loop (ask the usr again)
-      break;
+  //* Invalid option
+  default:
+    INVALID_OPTION_MSG;
+    usr = -1;    // Reset the usr choice
+    loop = true; // Rest in the loop (ask the usr again)
+    break;
   }
 }
 
@@ -213,12 +187,6 @@ void Crun::projects() {
 void Crun::clone_project(string project_name) {
   // Setup the project
   setPrj(project_name);
-
-  // Add the build sys
-  if (!buildSys.empty()) {
-    string cmd = CMAKE(prj_title, buildSys);
-    system(cmd.c_str());
-  }
 
   // Installation is complete successfully
   notify();
@@ -231,34 +199,27 @@ void Crun::clone_project(string project_name) {
  * @param old_prj_name
  */
 void Crun::setPrj(string old_prj_name) {
-  //* Get the built system (if they exist)
-  get_built_sys();
-
   //* Get the project name
   get_prj_name();
 
-  // Init the cmd char var
-  string cmd = "git clone https://github.com/ZouariOmar/" + old_prj_name + ".git";
+  // Clone the project
+  string cmd = _GET(old_prj_name);
+  system(cmd.c_str());
 
-  //* Clone the project
+  // Unzip the pkg
+  cmd = _UNZIP(old_prj_name);
+  system(cmd.c_str());
+
+  // Del the zip (no need for it)
+  cmd = _DEL_ZIP(old_prj_name);
   system(cmd.c_str());
 
   // Set the project name
-  cmd = "sudo mv " + old_prj_name + " '" + prj_title + "'";
+  cmd = _SET_NAME(old_prj_name, prj_title);
   system(cmd.c_str());
 
   // Set the project workspace name
-  cmd = "sudo mv '" + prj_title + "'/" + old_prj_name +
-        ".code-workspace '" + prj_title + "/" +
-        prj_title + ".code-workspace'";
-  system(cmd.c_str());
-
-  // Make run.sh exuded
-  cmd = "sudo chmod +x '" + prj_title + "'/run.sh";
-  system(cmd.c_str());
-
-  // Del the unecessary files
-  cmd = "sudo rm -r '" + prj_title + "'/.git '" + prj_title + "'/README.md '" + prj_title + "'/LICENSE";
+  cmd = _SET_WORKSPACE_FILE(old_prj_name, prj_title);
   system(cmd.c_str());
 }
 
@@ -267,43 +228,14 @@ void Crun::setPrj(string old_prj_name) {
  * @param prj_title
  */
 void Crun::get_prj_name() {
-  if (!prj_title.empty()) return;
-  menu(3);
+  if (!prj_title.empty())
+    return;
+  menu(2);
 
   //* Take the usr input
-  while (getchar() != '\n');
+  while (getchar() != '\n')
+    ;
   getline(cin, prj_title);
-}
-
-/**
- * @brief ### Get the build sys type
- */
-void Crun::get_built_sys() {
-  if (usr == 1 || !buildSys.empty()) return;
-  int usrIn;
-  while (1) {
-    menu(2);
-    cin >> usrIn;
-    switch (usrIn) {
-      case 1:
-        buildSys = "Unix Makefiles";
-        return;
-
-      case 2:
-        buildSys = "Ninja";
-        return;
-
-      case 0:
-        printf("\n\n%sSee You Next Time !%s\n\n", green, def);
-
-        //* Exit the program
-        exit(EXIT_SUCCESS);
-
-      default:
-        printf("\n\n%sInvalid Option !%s\n\n", red, def);
-        break;
-    }
-  }
 }
 
 /**
@@ -326,29 +258,24 @@ void Crun::notify() {
  */
 void Crun::menu(int x) {
   switch (x) {
-    //* Show the project intro bar
-    case 0:
-      CRUN;
-      MENU0(bleu, def);
-      break;
+  //* Show the project intro bar
+  case 0:
+    CRUN;
+    MENU0(bleu, def);
+    break;
 
-    //* Show the Crun menu
-    case 1:
-      MENU1(yellow, red, yellow, def);
-      break;
+  //* Show the Crun menu
+  case 1:
+    MENU1(yellow, red, yellow, def);
+    break;
 
-    //* Show the build sys menu
-    case 2:
-      MENU2(yellow, red, yellow, def);
-      break;
+  //* Show the project name msg
+  case 2:
+    MENU2(yellow, def);
+    break;
 
-    //* Show the project name msg
-    case 3:
-      MENU3(yellow, def);
-      break;
-
-    //* Invalid input
-    default:
-      break;
+  //* Invalid input
+  default:
+    break;
   }
 }

@@ -36,7 +36,6 @@ class Crun {
   bool loop;            // Crun program run/exit var
   string current_path;  // Current usr path
   string prj_title;     // The usr project title
-  string buildSys;
 
   // Prv function declaration part
   void menu(int);
@@ -46,14 +45,12 @@ class Crun {
   void clone_project(string);
   void setPrj(string);
   void get_prj_name();
-  void get_built_sys();
   void notify();
 
  public:
   Crun();
   Crun(string);
   Crun(string, string);
-  Crun(string, string, string);
 
 };  // Crun class
 
