@@ -1,15 +1,14 @@
-/***************************************************
- * @file      mainwindow.cpp
- * @author    @ZouariOmar (zouariomar20@gmail.com)
- * @brief     IDE__VSC
- * @version   0.1
- * @date      2024-06-06
- * @copyright Copyright (c) 2024
- ***************************************************/
+/**
+ * @file mainwindow.cpp
+ * @author @ZouariOmar (zouariomar20@gmail.com)
+ * @brief ### Main Crun Window
+ * @version 0.1
+ * @date 2025-01-10
+ * @copyright Copyright (c) 2025
+ */
 
 //? ------------------------------ INCLUDE PROTOTYPE DECLARATION PART ------------------------------
 #include "../inc/mainwindow.hpp"
-
 #include "../inc/suAccess.hpp"
 
 //? --------------------------------- FUNCTIONS PROTOTYPE DEV PART ---------------------------------
@@ -35,7 +34,7 @@ MainWindow::MainWindow(QWidget *parent)
   ui->groupBox->setVisible(false);
 
   // Crun intro image
-  QPixmap pixmap(":/imgs/Crun.png");  //* Use the resource path
+  QPixmap pixmap(":/imgs/Crun.png"); //* Use the resource path
 
   ui->label_6->setPixmap(pixmap);
   ui->label_6->show();
@@ -172,36 +171,39 @@ void CrunGUI::clone_prj(std::string oldPrj) {
  */
 std::string CrunGUI::getOldPrjName() {
   switch (c.pId) {
-    //? ------------------- C PROJECTS PART -------------------
-    //* Clone the 'Quick C Project Enviornment'
-    case 0:
-      return "Quick_C_Project_Environment";
+  // ? ------------------- C/C++ PROJECTS PART -------------------
+  //* Clone the 'Quick_C-CPP_Project_Env'
+  case 0:
+    return "Quick_C-CPP_Project_Env";
 
-    //* Clone the 'C Project Enviornment'
-    case 2:
-      return "C_Project_Environment";
+  //* Clone the 'C-CPP_Project_Env'
+  case 1:
+    return "C-CPP_Project_Env";
 
-    //* Clone the 'C-SDL1.2 Project Enviornment'
-    case 4:
-      return "C-SDL1.2_Project_Environment";
+  //* Clone the 'SDL-C-CPP_Project_Env'
+  case 2:
+    return "SDL-C-CPP_Project_Env";
 
-    //? ------------------- C++ PROJECTS PART -------------------
-    //* Clone the 'Quick C++ Project Enviornment'
-    case 1:
-      return "Quick_Cpp_Project_Environment";
-
-    //* Clone the 'C++ Project Enviornment'
-    case 3:
-      return "Cpp_Project_Environment";
+  //* Clone the 'Qt-C-Cpp_Project_Env'
+  case 3:
+    return "Qt-C-Cpp_Project_Env";
 
     //* Clone the 'C++-Qt Project Enviornment'
-    case 5:
-      return "Cpp-Qt_Project_Environment";
+  case 4:
+    return "Cpp-Qt_Project_Environment";
 
-    //? ------------------- WEB PROJECTS PART -------------------
-    //* Clone the 'Web Project Enviornment'
-    case 6:
-      return "Run_Web_Project";
+  //* Clone the 'Arduino-C-Cpp_Project_Env'
+  case 5:
+    return "Arduino-C-Cpp_Project_Env";
+
+  // ? ------------------- WEB PROJECTS PART -------------------
+  //* Clone the 'Web Project Enviornment'
+  case 6:
+    return "Run_Web_Project";
+
+  //* Clone the 'ReactJS Project Enviornment'
+  case 7:
+    return "#";
   }
 
   return "";

@@ -1,9 +1,0 @@
-/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/GUI/bin/build/CMakeFiles/app.dir
-/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/GUI/bin/build/CMakeFiles/edit_cache.dir
-/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/GUI/bin/build/CMakeFiles/rebuild_cache.dir
-/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/GUI/bin/build/CMakeFiles/list_install_components.dir
-/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/GUI/bin/build/CMakeFiles/install.dir
-/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/GUI/bin/build/CMakeFiles/install/local.dir
-/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/GUI/bin/build/CMakeFiles/install/strip.dir
-/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/GUI/bin/build/CMakeFiles/app_autogen_timestamp_deps.dir
-/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/GUI/bin/build/CMakeFiles/app_autogen.dir

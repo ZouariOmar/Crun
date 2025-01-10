@@ -1,12 +1,12 @@
-/***************************************************
- * @file      lib.cpp
- * @author    @ZouariOmar (zouariomar20@gmail.com)
- * @brief     IDE__VSC
- * @version   0.1
- * @date      29-08-2024
- * @link      https://github.com/ZouariOmar/Crun
- * @copyright Copyright (c) 2024
- ***************************************************/
+/**
+ * @file lib.cpp
+ * @author @ZouariOmar (zouariomar20@gmail.com)
+ * @brief # Main dev file
+ * @version 0.1
+ * @date 2025-01-10
+ * @copyright Copyright (c) 2025
+ * @link https://github.com/ZouariOmar/Crun Crun @endlink
+ */
 
 //? -------------------- INCLUDE PROTOTYPE DECLARATION PART --------------------
 #include "../inc/inc.hpp"
@@ -17,8 +17,9 @@
 
 /**
  * @brief ### Lancer function
+ * 
  * @param argc int
- * @param argv const char **
+ * @param argv {const char **}
  */
 void __lance__(int argc, const char **argv) {
   if (argc == 1)
@@ -31,8 +32,9 @@ void __lance__(int argc, const char **argv) {
 
 /**
  * @brief ### Construct a new Crun::Crun object
- * @param f1
- * @param f2
+ * 
+ * @param f1 string
+ * @param f2 string
  */
 Crun::Crun(string f1, string f2)
     : current_path(filesystem::current_path()), loop(true), usr(-1) {
@@ -51,7 +53,8 @@ Crun::Crun(string f1, string f2)
 
 /**
  * @brief ### Construct a new Crun::Crun object
- * @param f1
+ * 
+ * @param f1 string
  */
 Crun::Crun(string f1)
     : current_path(filesystem::current_path()), loop(true), usr(-1) {
@@ -83,7 +86,7 @@ Crun::Crun()
 }
 
 /**
- * @brief #### The main main Crun function
+ * @brief ### The main main Crun function
  */
 void Crun::body() {
   while (loop) {
@@ -100,9 +103,14 @@ void Crun::body() {
   }
 }
 
+/**
+ * @brief ### Return if there is flag match
+ * 
+ * @param str string 
+ * @return bool 
+ */
 bool Crun::is_flag(string str) {
-  // Set the regex pattern
-  regex r("-P([1-9]+)|-N([A-Za-z]+)");
+  regex r("-P([1-9]+)|-N([A-Za-z]+)"); // Set the regex pattern
   smatch match;
 
   if (regex_search(str, match, r)) {
@@ -118,7 +126,7 @@ bool Crun::is_flag(string str) {
 
 /**
  * @brief #### Clone project using the Cpkg template URL
- * *
+ * 
  * - #### For quick access
  */
 void Crun::projects() {
@@ -137,38 +145,36 @@ void Crun::projects() {
     clone_project("C-CPP_Project_Env");
     break;
 
-  //* Clone the 'SDL1.2-SDL2.0_C-CPP_Project_Env'
+  //* Clone the 'SDL-C-CPP_Project_Env'
   case 3:
-    clone_project("SDL1.2-SDL2.0_C-CPP_Project_Env");
+    clone_project("SDL-C-CPP_Project_Env");
     break;
 
-  //* Clone the 'QT5/QT6 C/C++ Project Env'
+  //* Clone the 'Qt-C-Cpp_Project_Env'
   case 4:
-    clone_project("QT5-QT6_C-CPP_Project_Env");
+    clone_project("Qt-C-Cpp_Project_Env");
     break;
 
-  //* Clone the 'C++ Project Enviornment'
+  //* Clone the 'Arduino-C-Cpp_Project_Env'
   case 5:
-    clone_project("Cpp_Project_Environment");
-    break;
-
-  //* Clone the 'C++-Qt Project Enviornment'
-  case 6:
-    clone_project("Cpp-Qt_Project_Environment");
+    clone_project("Arduino-C-Cpp_Project_Env");
     break;
 
   //? ------------------- WEB PROJECTS PART -------------------
-  //* Clone the 'Web Project Enviornment'
-  case 7:
+  //* Clone the 'Run_Web_Project'
+  case 6:
     clone_project("Run_Web_Project");
+    break;
 
+  //* Clone the 'ReactJS Project Enviornment'
+  case 7:
+    clone_project("#");
     break;
 
   //? ----------------------- QUIT CRUN -----------------------
   case 0:
     EXIT_SUCCESS_MSG;
     exit(EXIT_SUCCESS); //* Exit the program
-
     break;
 
   //* Invalid option
@@ -182,7 +188,8 @@ void Crun::projects() {
 
 /**
  * @brief #### Clone + Setup the usr Project without build sys
- * @param project_name
+ * 
+ * @param project_name stirng
  */
 void Crun::clone_project(string project_name) {
   // Setup the project
@@ -193,10 +200,10 @@ void Crun::clone_project(string project_name) {
 }
 
 /**
- * @brief #### Setup the usr Project
- * *
+ * @brief ### Setup the usr Project
+ * 
  * - Actions: Delete(rm) | Rename(mv) | clone | changePermission(chmod)
- * @param old_prj_name
+ * @param old_prj_name string
  */
 void Crun::setPrj(string old_prj_name) {
   //* Get the project name
@@ -225,7 +232,6 @@ void Crun::setPrj(string old_prj_name) {
 
 /**
  * @brief ### Get the usr project name
- * @param prj_title
  */
 void Crun::get_prj_name() {
   if (!prj_title.empty())
@@ -254,7 +260,7 @@ void Crun::notify() {
 
 /**
  * @brief ### All Crun menus
- * @param x
+ * @param x int
  */
 void Crun::menu(int x) {
   switch (x) {

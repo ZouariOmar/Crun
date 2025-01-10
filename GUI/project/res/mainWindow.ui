@@ -210,7 +210,7 @@
       <bool>false</bool>
      </property>
      <property name="currentIndex">
-      <number>-1</number>
+      <number>0</number>
      </property>
      <property name="maxVisibleItems">
       <number>10</number>
@@ -220,7 +220,7 @@
      </property>
      <item>
       <property name="text">
-       <string>Quick C Project Enviornment</string>
+       <string>Quick C/C++ Project Env</string>
       </property>
       <property name="icon">
        <iconset theme="applications-other"/>
@@ -228,7 +228,7 @@
      </item>
      <item>
       <property name="text">
-       <string>Quick C++ Project Enviornment</string>
+       <string>C/C++ Project Env</string>
       </property>
       <property name="icon">
        <iconset theme="applications-other"/>
@@ -236,7 +236,7 @@
      </item>
      <item>
       <property name="text">
-       <string>C Project Enviornment</string>
+       <string>SDL1.2/SDL2.0 C/C++ Project Env</string>
       </property>
       <property name="icon">
        <iconset theme="applications-other"/>
@@ -244,7 +244,7 @@
      </item>
      <item>
       <property name="text">
-       <string>C++ Project Enviornment</string>
+       <string>QT5/QT6 C/C++ Project Env</string>
       </property>
       <property name="icon">
        <iconset theme="applications-other"/>
@@ -252,15 +252,7 @@
      </item>
      <item>
       <property name="text">
-       <string>C-SDL1.2 Project Enviornment</string>
-      </property>
-      <property name="icon">
-       <iconset theme="applications-other"/>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>C++-Qt Project Enviornment</string>
+       <string>ESP32 C/C++ Project Env</string>
       </property>
       <property name="icon">
        <iconset theme="applications-other"/>
@@ -269,6 +261,14 @@
      <item>
       <property name="text">
        <string>Web Project Enviornment</string>
+      </property>
+      <property name="icon">
+       <iconset theme="applications-other"/>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>ReactJS Project Enviornment</string>
       </property>
       <property name="icon">
        <iconset theme="applications-other"/>

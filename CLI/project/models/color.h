@@ -1,9 +1,12 @@
-/* -----------------------------------------------
-* @author: @zouari_omar
-* @IDE:    vsc
-* @update: 06/04/24
-? @file_name: color.h
------------------------------------------------ */
+/**
+ * @file color.h
+ * @author @ZouariOmar (zouariomar20@gmail.com)
+ * @brief # Color define file
+ * @version 0.1
+ * @date 2025-01-10
+ * @copyright Copyright (c) 2025
+ * @link https://github.com/ZouariOmar/Cpkg Cpkg @endlink
+ */
 
 #ifndef __COLOR_H__
 #define __COLOR_H__
@@ -30,4 +33,4 @@
 #define bgCyan "\x1B[46m"
 #define bgWhite "\x1B[47m"
 
-#endif
+#endif // __COLOR_H__

@@ -9,7 +9,7 @@
 
 //? ------------------------------ INCLUDE PROTOTYPE DECLARATION PART ------------------------------
 #include "../inc/mainwindow.hpp"
-#include <QApplication>
+#include <qt6/QtWidgets/QApplication>
 
 //? --------------------------------- MAIN() INT FUNCTION DEV PART ---------------------------------
 

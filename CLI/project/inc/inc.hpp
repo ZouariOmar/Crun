@@ -1,12 +1,12 @@
-/***************************************************
- * @file      inc.hpp
- * @author    @ZouariOmar (zouariomar20@gmail.com)
- * @brief     IDE__VSC
- * @version   0.1
- * @date      29-08-2024
- * @link      https://github.com/ZouariOmar/Crun
- * @copyright Copyright (c) 2024
- ***************************************************/
+/**
+ * @file inc.hpp
+ * @author @ZouariOmar (zouariomar20@gmail.com)
+ * @brief # Main include file
+ * @version 0.1
+ * @date 2025-01-10
+ * @copyright Copyright (c) 2025
+ * @link https://github.com/ZouariOmar/Crun Crun @endlink
+ */
 
 #ifndef __INC_HPP__
 #define __INC_HPP__
@@ -30,12 +30,12 @@ using namespace std;
 void __lance__(int, const char **);
 
 class Crun {
- private:
+private:
   // Prv vars declaration part
-  int usr;              // Usr choices
-  bool loop;            // Crun program run/exit var
-  string current_path;  // Current usr path
-  string prj_title;     // The usr project title
+  int usr;             // Usr choices
+  bool loop;           // Crun program run/exit var
+  string current_path; // Current usr path
+  string prj_title;    // The usr project title
 
   // Prv function declaration part
   void menu(int);
@@ -47,11 +47,11 @@ class Crun {
   void get_prj_name();
   void notify();
 
- public:
+public:
   Crun();
   Crun(string);
   Crun(string, string);
 
-};  // Crun class
+}; // Crun class
 
-#endif  // __INC_HPP__
+#endif // __INC_HPP__

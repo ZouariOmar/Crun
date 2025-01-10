@@ -83,7 +83,8 @@
 			"typeinfo": "cpp",
 			"future": "cpp",
 			"stdfloat": "cpp",
-			"text_encoding": "cpp"
+			"text_encoding": "cpp",
+			"qdebug": "cpp"
 		},
 		"editor.tabSize": 2
 	}
