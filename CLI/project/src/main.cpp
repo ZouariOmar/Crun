@@ -8,18 +8,19 @@
  * @link https://github.com/ZouariOmar/Crun Crun @endlink
  */
 
-//? -------------------- INCLUDE PROTOTYPE DECLARATION PART --------------------
-#include "../inc/inc.hpp"
+//? Include prototype declaration part
+#include "../include/inc.hpp"
 
-//? ----------------------- FUNCTIONS PROTOTYPE DEV PART -----------------------
+//? Functions prototype dev part
 
 /**
- * @brief # The main Crun function
+ * @fn         main(int, const char **)
+ * @brief      The main Crun function
  * @param argc int
- * @param argv {char const **}
- * @return int
+ * @param argv {const char **}
+ * @return     int
  */
-int main(int argc, char const **argv) {
+int main(int argc, const char **argv) {
   __lance__(argc, argv);
   return EXIT_SUCCESS;
 }

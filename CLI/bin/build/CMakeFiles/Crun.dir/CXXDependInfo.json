@@ -1,0 +1,32 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "GNU",
+	"compiler-id" : "GNU",
+	"compiler-simulate-id" : "",
+	"config" : "",
+	"cxx-modules" : {},
+	"database-info" : null,
+	"dir-cur-bld" : "/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/CLI/bin/build",
+	"dir-cur-src" : "/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/CLI/conf",
+	"dir-top-bld" : "/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/CLI/bin/build",
+	"dir-top-src" : "/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/CLI/conf",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : [],
+	"language" : "CXX",
+	"linked-target-dirs" : [],
+	"module-dir" : "/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/CLI/bin/build/CMakeFiles/Crun.dir",
+	"sources" : 
+	{
+		"CMakeFiles/Crun.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/CLI/project/src/lib.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/CLI/project/src/lib.cpp"
+		},
+		"CMakeFiles/Crun.dir/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/CLI/project/src/main.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/zouari_omar/Documents/Daily/Projects/Crun/Crun/CLI/project/src/main.cpp"
+		}
+	}
+}

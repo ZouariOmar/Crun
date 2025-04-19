@@ -1,25 +1,26 @@
 /**
- * @file lib.cpp
- * @author @ZouariOmar (zouariomar20@gmail.com)
- * @brief # Main dev file
- * @version 0.1
- * @date 2025-01-10
+ * @file      lib.cpp
+ * @author    @ZouariOmar (zouariomar20@gmail.com)
+ * @brief     Main source file
+ * @version   0.1
+ * @date      2025-01-10
  * @copyright Copyright (c) 2025
  * @link https://github.com/ZouariOmar/Crun Crun @endlink
  */
 
-//? -------------------- INCLUDE PROTOTYPE DECLARATION PART --------------------
-#include "../inc/inc.hpp"
-#include "../models/color.h"
-#include "../models/patterns.hpp"
+//? Include prototype declaration part
+#include "../import/color.h"
+#include "../import/patterns.hpp"
+#include "../include/inc.hpp"
 
-//? ----------------------- FUNCTIONS PROTOTYPE DEV PART -----------------------
+//? Functions prototype dev part
 
 /**
- * @brief ### Lancer function
- * 
+ * @fn         __lance__(int, const char **)
+ * @brief      Lancer function
  * @param argc int
  * @param argv {const char **}
+ * @retrun     void
  */
 void __lance__(int argc, const char **argv) {
   if (argc == 1)
@@ -27,12 +28,13 @@ void __lance__(int argc, const char **argv) {
   else if (argc == 3)
     Crun c(string{argv[1]} + string{argv[2]});
   else if (argc == 5)
-    Crun c(string{argv[1]} + string{argv[2]}, string{argv[3]} + string{argv[4]});
+    Crun c(string{argv[1]} + string{argv[2]},
+           string{argv[3]} + string{argv[4]});
 }
 
 /**
  * @brief ### Construct a new Crun::Crun object
- * 
+ *
  * @param f1 string
  * @param f2 string
  */
@@ -53,7 +55,7 @@ Crun::Crun(string f1, string f2)
 
 /**
  * @brief ### Construct a new Crun::Crun object
- * 
+ *
  * @param f1 string
  */
 Crun::Crun(string f1)
@@ -105,9 +107,9 @@ void Crun::body() {
 
 /**
  * @brief ### Return if there is flag match
- * 
- * @param str string 
- * @return bool 
+ *
+ * @param str string
+ * @return bool
  */
 bool Crun::is_flag(string str) {
   regex r("-P([1-9]+)|-N([A-Za-z]+)"); // Set the regex pattern
@@ -126,7 +128,7 @@ bool Crun::is_flag(string str) {
 
 /**
  * @brief #### Clone project using the Cpkg template URL
- * 
+ *
  * - #### For quick access
  */
 void Crun::projects() {
@@ -188,7 +190,7 @@ void Crun::projects() {
 
 /**
  * @brief #### Clone + Setup the usr Project without build sys
- * 
+ *
  * @param project_name stirng
  */
 void Crun::clone_project(string project_name) {
@@ -201,7 +203,7 @@ void Crun::clone_project(string project_name) {
 
 /**
  * @brief ### Setup the usr Project
- * 
+ *
  * - Actions: Delete(rm) | Rename(mv) | clone | changePermission(chmod)
  * @param old_prj_name string
  */
@@ -224,14 +226,12 @@ void Crun::setPrj(string old_prj_name) {
   // Set the project name
   cmd = _SET_NAME(old_prj_name, prj_title);
   system(cmd.c_str());
-
-  // Set the project workspace name
-  cmd = _SET_WORKSPACE_FILE(old_prj_name, prj_title);
-  system(cmd.c_str());
 }
 
 /**
- * @brief ### Get the usr project name
+ * @fn     Crun::get_prj_name()
+ * @brief  Get the usr project name
+ * @return void
  */
 void Crun::get_prj_name() {
   if (!prj_title.empty())
@@ -245,22 +245,26 @@ void Crun::get_prj_name() {
 }
 
 /**
- * @brief ### Installation Complete successfully notification
+ * @fn     Crun::notify()
+ * @brief  Installation complete successfully notification
+ * @return void
  */
 void Crun::notify() {
   //* Notify the user
   printf("%sInstallation Complete!%s\n", green, def);
 
-  //* Open the directory
+  //* Open the directory (optional)
   system(("xdg-open \"" + current_path + "\"").c_str());
 
-  //* Open the project with VSC
-  system(("code '" + prj_title + "'/'" + prj_title + "'.code-workspace").c_str());
+  //* Open the project with NVIM/VIM
+  system(("nvim " + prj_title + " || vim " + prj_title).c_str());
 }
 
 /**
- * @brief ### All Crun menus
+ * @fn      Crun::menu(int)
+ * @brief   All Crun menus
  * @param x int
+ * @return  void
  */
 void Crun::menu(int x) {
   switch (x) {
