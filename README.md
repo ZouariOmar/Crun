@@ -12,85 +12,76 @@ The provided C code serves as a project initiation script named "Crun." Its prim
 
 ```bash
 .Crun
-├── bin
-│   ├── build
-│   │   ├── CMakeCache.txt
-│   │   ├── CMakeFiles
-│   │   │   ├── 3.29.3
-│   │   │   │   ├── CMakeCCompiler.cmake
-│   │   │   │   ├── CMakeCXXCompiler.cmake
-│   │   │   │   ├── CMakeDetermineCompilerABI_C.bin
-│   │   │   │   ├── CMakeDetermineCompilerABI_CXX.bin
-│   │   │   │   ├── CMakeSystem.cmake
-│   │   │   │   ├── CompilerIdC
-│   │   │   │   │   ├── a.out
-│   │   │   │   │   ├── CMakeCCompilerId.c
-│   │   │   │   │   └── tmp
-│   │   │   │   └── CompilerIdCXX
-│   │   │   │       ├── a.out
-│   │   │   │       ├── CMakeCXXCompilerId.cpp
-│   │   │   │       └── tmp
-│   │   │   ├── cmake.check_cache
-│   │   │   ├── CMakeConfigureLog.yaml
-│   │   │   ├── CMakeDirectoryInformation.cmake
-│   │   │   ├── Crun.dir
-│   │   │   │   ├── build.make
-│   │   │   │   ├── cmake_clean.cmake
-│   │   │   │   ├── compiler_depend.make
-│   │   │   │   ├── compiler_depend.ts
-│   │   │   │   ├── DependInfo.cmake
-│   │   │   │   ├── depend.make
-│   │   │   │   ├── flags.make
-│   │   │   │   ├── home
-│   │   │   │   │   └── zouari_omar
-│   │   │   │   │       └── Documents
-│   │   │   │   │           └── Daily
-│   │   │   │   │               └── Projects
-│   │   │   │   │                   └── Crun
-│   │   │   │   │                       └── Crun
-│   │   │   │   │                           └── project
-│   │   │   │   │                               └── src
-│   │   │   │   │                                   ├── lib.c.o
-│   │   │   │   │                                   ├── lib.c.o.d
-│   │   │   │   │                                   ├── main.c.o
-│   │   │   │   │                                   └── main.c.o.d
-│   │   │   │   ├── link.txt
-│   │   │   │   └── progress.make
-│   │   │   ├── Makefile2
-│   │   │   ├── Makefile.cmake
-│   │   │   ├── pkgRedirects
-│   │   │   ├── progress.marks
-│   │   │   └── TargetDirectories.txt
-│   │   ├── Crun
-│   │   └── Makefile
-│   ├── debug
-│   │   └── app
-│   ├── release
-│   │   ├── Crun
-│   │   └── Crun.exe
-│   └── test
-│       └── test
-├── Crun.code-workspace
+├── CLI
+│   ├── bin
+│   │   ├── build
+│   │   ├── debug
+│   │   ├── release
+│   │   │   └── Crun
+│   │   └── test
+│   ├── conf
+│   │   └── CMakeLists.txt
+│   ├── imgs
+│   │   └── Crun.ico
+│   ├── project
+│   │   ├── import
+│   │   │   ├── color.h
+│   │   │   └── patterns.hpp
+│   │   ├── include
+│   │   │   └── inc.hpp
+│   │   └── src
+│   │       ├── lib.cpp
+│   │       └── main.cpp
+│   └── run.sh
 ├── doc
-│   └── notes.txt
+│   └── notes.txt
+├── GUI
+│   ├── bin
+│   │   ├── build
+│   │   ├── debug
+│   │   │   └── debug
+│   │   ├── release
+│   │   │   └── Crun
+│   │   └── test
+│   │       └── test
+│   ├── conf
+│   │   ├── CMakeLists.txt
+│   │   └── test
+│   │       └── CMakeLists.txt
+│   ├── Crun GUI.code-workspace
+│   ├── doc
+│   │   ├── pdf
+│   │   │   └── NONE.pdf
+│   │   └── TODO.md
+│   ├── download
+│   │   └── download
+│   ├── pkg
+│   │   └── CMakeLists.txt
+│   ├── project
+│   │   ├── doc
+│   │   │   └── doc
+│   │   ├── inc
+│   │   │   ├── mainwindow.hpp
+│   │   │   └── suAccess.hpp
+│   │   ├── qss style
+│   │   │   └── style.qss
+│   │   ├── res
+│   │   │   ├── CrunIco.qrc
+│   │   │   ├── Crun.qrc
+│   │   │   ├── imgs
+│   │   │   │   ├── Crun.ico
+│   │   │   │   └── Crun.png
+│   │   │   ├── mainWindow.ui
+│   │   │   └── suAccess.ui
+│   │   └── src
+│   │       ├── main.cpp
+│   │       ├── mainwindow.cpp
+│   │       └── suAccess.cpp
+│   └── run.sh
 ├── LICENSE
-├── pkg
-│   ├── build.sh
-│   ├── CMakeLists.txt
-│   └── color.h
-├── project
-│   ├── inc
-│   │   └── inc.h
-│   ├── res
-│   │   └── img
-│   │       └── Crun.ico
-│   └── src
-│       ├── lib.c
-│       └── main.c
-├── README.md
-└── run.sh
+└── README.md
 
-30 directories, 48 files
+33 directories, 36 files
 ```
 
 ## How to Use
@@ -123,7 +114,7 @@ To lunch the project on your Linux system, follow these steps:
 
 ---
 
-## Download Link: [Crun Project Download](https://www.mediafire.com/file/yx0mwchqguc4pbj/Crun.zip/file)
+## Download Link: [Crun](https://www.mediafire.com/file/yufib9zbdljwy7g/Crun.zip/file)
 
 ---
 

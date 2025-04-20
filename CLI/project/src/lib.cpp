@@ -253,11 +253,8 @@ void Crun::notify() {
   //* Notify the user
   printf("%sInstallation Complete!%s\n", green, def);
 
-  //* Open the directory (optional)
-  system(("xdg-open \"" + current_path + "\"").c_str());
-
   //* Open the project with NVIM/VIM
-  system(("nvim " + prj_title + " || vim " + prj_title).c_str());
+  system(("nvim '" + prj_title + "' || vim '" + prj_title + "'").c_str());
 }
 
 /**
