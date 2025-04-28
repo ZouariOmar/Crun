@@ -1,17 +1,17 @@
 /**
- * @file main.cpp
- * @author @ZouariOmar (zouariomar20@gmail.com)
- * @brief # Crun Lancer file
- * @version 0.1
- * @date 2025-01-10
+ * @file      main.cpp
+ * @author    @ZouariOmar (zouariomar20@gmail.com)
+ * @brief     Main source file
+ * @version   0.1
+ * @date      2025-04-28
  * @copyright Copyright (c) 2025
- * @link https://github.com/ZouariOmar/Crun Crun @endlink
+ * @link https://github.com/ZouariOmar/Crun/project/src/main.cpp main.cpp @endlink
  */
 
 //? Include prototype declaration part
-#include "../include/inc.hpp"
+#include "../include/Crun.hpp"
 
-//? Functions prototype dev part
+//? Main function prototype dev part
 
 /**
  * @fn         main(int, const char **)
@@ -21,6 +21,6 @@
  * @return     int
  */
 int main(int argc, const char **argv) {
-  __lance__(argc, argv);
-  return EXIT_SUCCESS;
+  Crun crun(argc, argv);
+  return crun.generate();
 }

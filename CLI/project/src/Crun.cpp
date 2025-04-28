@@ -1,7 +1,7 @@
 /**
- * @file      lib.cpp
+ * @file      Crun.cpp
  * @author    @ZouariOmar (zouariomar20@gmail.com)
- * @brief     Main source file
+ * @brief     Crun source file
  * @version   0.1
  * @date      2025-01-10
  * @copyright Copyright (c) 2025
@@ -9,100 +9,43 @@
  */
 
 //? Include prototype declaration part
-#include "../import/color.h"
+#include "../include/Crun.hpp"
 #include "../import/patterns.hpp"
-#include "../include/inc.hpp"
 
 //? Functions prototype dev part
 
 /**
- * @fn         __lance__(int, const char **)
- * @brief      Lancer function
- * @param argc int
+ * @brief Construct a new Crun::Crun object
+ * @param argc {const int}
  * @param argv {const char **}
- * @retrun     void
  */
-void __lance__(int argc, const char **argv) {
-  if (argc == 1)
-    Crun c;
-  else if (argc == 3)
-    Crun c(string{argv[1]} + string{argv[2]});
-  else if (argc == 5)
-    Crun c(string{argv[1]} + string{argv[2]},
-           string{argv[3]} + string{argv[4]});
-}
-
-/**
- * @brief ### Construct a new Crun::Crun object
- *
- * @param f1 string
- * @param f2 string
- */
-Crun::Crun(string f1, string f2)
-    : current_path(filesystem::current_path()), loop(true), usr(-1) {
-  // Clear the CLI
-  system("clear");
-
-  // Show the project intro bar
-  menu(0);
-
-  // Check the flag
-  if (is_flag(f1) && is_flag(f2))
-    body();
-  else
-    printf("\n\n%sInvalid Option !%s\n\n", red, def);
-}
-
-/**
- * @brief ### Construct a new Crun::Crun object
- *
- * @param f1 string
- */
-Crun::Crun(string f1)
-    : current_path(filesystem::current_path()), loop(true), usr(-1) {
-  // Clear the CLI
-  system("clear");
-
-  // Show the project intro bar
-  menu(0);
-
-  // Check the flag
-  if (is_flag(f1))
-    body();
-  else
-    printf("\n\n%sInvalid Option !%s\n\n", red, def);
-}
-
-/**
- * @brief ### Construct a new Crun::Crun object
- */
-Crun::Crun()
-    : current_path(filesystem::current_path()), loop(true), usr(-1) {
-  // Clear the CLI
-  system("clear");
-
-  // Show the project intro bar
-  menu(0);
-
-  body();
+Crun::Crun(const int argc, const char **argv)
+    : current_path(std::filesystem::current_path()),
+      loop(true),
+      usr(-1),
+      prj_title("") {
+  if (!((argc == 1) ||
+        (argc == 3 && is_flag(std::string{argv[1]} + std::string{argv[2]})) ||
+        (argc == 5 && is_flag(std::string{argv[1]} + std::string{argv[2]}) && is_flag(std::string{argv[3]} + std::string{argv[4]})))) {
+    INVALID_OPTION_MSG;
+    return;
+  }
+  system("clear"); // Clear the cli
+  CRUN;            // Show Crun Top header
+  MENU0;           // Show Crun header menu
 }
 
 /**
  * @brief ### The main main Crun function
  */
-void Crun::body() {
+int Crun::generate() {
   while (loop) {
-    if (usr == -1) {
-      // Show the Crun menu
-      menu(1);
-
-      // Take the usr input option
-      cin >> usr;
-    }
-
-    //* Run the program
-    projects();
+    if (usr != -1)
+      projects();
+    MENU1;           // Show the Crun menu
+    std::cin >> usr; // Take the usr input
   }
+  return EXIT_SUCCESS;
 }
 
 /**
@@ -111,9 +54,9 @@ void Crun::body() {
  * @param str string
  * @return bool
  */
-bool Crun::is_flag(string str) {
-  regex r("-P([1-9]+)|-N([A-Za-z]+)"); // Set the regex pattern
-  smatch match;
+bool Crun::is_flag(std::string str) {
+  std::regex r("-P([1-9]+)|-N([A-Za-z]+)"); // Set the regex pattern
+  std::smatch match;
 
   if (regex_search(str, match, r)) {
     if (match[1].matched)
@@ -122,7 +65,6 @@ bool Crun::is_flag(string str) {
       prj_title = match[2];
     return true;
   }
-
   return false;
 }
 
@@ -182,8 +124,7 @@ void Crun::projects() {
   //* Invalid option
   default:
     INVALID_OPTION_MSG;
-    usr = -1;    // Reset the usr choice
-    loop = true; // Rest in the loop (ask the usr again)
+    usr = -1, loop = true; // Ask the usr again (reset proccess)
     break;
   }
 }
@@ -193,9 +134,9 @@ void Crun::projects() {
  *
  * @param project_name stirng
  */
-void Crun::clone_project(string project_name) {
+void Crun::clone_project(std::string project_name) {
   // Setup the project
-  setPrj(project_name);
+  setupProject(project_name);
 
   // Installation is complete successfully
   notify();
@@ -207,12 +148,12 @@ void Crun::clone_project(string project_name) {
  * - Actions: Delete(rm) | Rename(mv) | clone | changePermission(chmod)
  * @param old_prj_name string
  */
-void Crun::setPrj(string old_prj_name) {
+void Crun::setupProject(std::string old_prj_name) {
   //* Get the project name
   get_prj_name();
 
   // Clone the project
-  string cmd = _GET(old_prj_name);
+  std::string cmd = _GET(old_prj_name);
   system(cmd.c_str());
 
   // Unzip the pkg
@@ -236,12 +177,12 @@ void Crun::setPrj(string old_prj_name) {
 void Crun::get_prj_name() {
   if (!prj_title.empty())
     return;
-  menu(2);
+  MENU2;
 
   //* Take the usr input
   while (getchar() != '\n')
     ;
-  getline(cin, prj_title);
+  getline(std::cin, prj_title);
 }
 
 /**
@@ -255,34 +196,4 @@ void Crun::notify() {
 
   //* Open the project with NVIM/VIM
   system(("nvim '" + prj_title + "' || vim '" + prj_title + "'").c_str());
-}
-
-/**
- * @fn      Crun::menu(int)
- * @brief   All Crun menus
- * @param x int
- * @return  void
- */
-void Crun::menu(int x) {
-  switch (x) {
-  //* Show the project intro bar
-  case 0:
-    CRUN;
-    MENU0(bleu, def);
-    break;
-
-  //* Show the Crun menu
-  case 1:
-    MENU1(yellow, red, yellow, def);
-    break;
-
-  //* Show the project name msg
-  case 2:
-    MENU2(yellow, def);
-    break;
-
-  //* Invalid input
-  default:
-    break;
-  }
 }

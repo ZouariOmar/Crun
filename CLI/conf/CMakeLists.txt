@@ -7,10 +7,10 @@ project(Crun)
 # set the CMake engine version
 set(CMAKE_CXX_STANDARD 20)
 
-set(SOURCES 
+set(SOURCES
   ${CMAKE_CURRENT_SOURCE_DIR}/../project/src/main.cpp
-  ${CMAKE_CURRENT_SOURCE_DIR}/../project/src/lib.cpp
-  ${CMAKE_CURRENT_SOURCE_DIR}/../project/include/inc.hpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/../project/src/Crun.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/../project/include/Crun.hpp
   ${CMAKE_CURRENT_SOURCE_DIR}/../project/import/color.h
   ${CMAKE_CURRENT_SOURCE_DIR}/../project/import/patterns.hpp
 )
