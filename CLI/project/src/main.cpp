@@ -22,5 +22,7 @@
  */
 int main(int argc, const char **argv) {
   Crun crun(argc, argv);
-  return crun.generate();
+  if (!crun.generate())
+    crun.notify();
+  return EXIT_SUCCESS;
 }

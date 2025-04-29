@@ -9,19 +9,24 @@
  */
 
 //? Include prototype declaration part
-#include "../include/Crun.hpp"
+//* Include stander C++ header(s)
+#include <iostream>
+#include <regex>
+
+//* Include custom header(s)
 #include "../import/patterns.hpp"
+#include "../include/Crun.hpp"
 
 //? Functions prototype dev part
 
 /**
- * @brief Construct a new Crun::Crun object
+ * @fn         Crun::Crun(const int, const char **)
+ * @brief      Construct a new Crun::Crun object
  * @param argc {const int}
  * @param argv {const char **}
  */
 Crun::Crun(const int argc, const char **argv)
-    : current_path(std::filesystem::current_path()),
-      loop(true),
+    : loop(true),
       usr(-1),
       prj_title("") {
   if (!((argc == 1) ||
@@ -36,28 +41,31 @@ Crun::Crun(const int argc, const char **argv)
 }
 
 /**
- * @brief ### The main main Crun function
+ * @fn     Crun::generate()
+ * @brief  The main Crun function
+ * @return int
  */
 int Crun::generate() {
   while (loop) {
     if (usr != -1)
-      projects();
-    MENU1;           // Show the Crun menu
-    std::cin >> usr; // Take the usr input
+      loop = false, projects();
+    else {
+      MENU1;           // Show the Crun menu
+      std::cin >> usr; // Take the usr input
+    }
   }
   return EXIT_SUCCESS;
 }
 
 /**
- * @brief ### Return if there is flag match
- *
+ * @fn        Crun::is_flag(std::string)
+ * @brief     Return `ture` if there is flag match, otherwise return `false`
  * @param str string
- * @return bool
+ * @return    bool
  */
 bool Crun::is_flag(std::string str) {
-  std::regex r("-P([1-9]+)|-N([A-Za-z]+)"); // Set the regex pattern
+  std::regex r(CRUN_CLI_FLAGS_PATTERN);
   std::smatch match;
-
   if (regex_search(str, match, r)) {
     if (match[1].matched)
       usr = stoi(match[1]);
@@ -69,50 +77,68 @@ bool Crun::is_flag(std::string str) {
 }
 
 /**
- * @brief #### Clone project using the Cpkg template URL
- *
- * - #### For quick access
+ * @fn     Crun::projects()
+ * @brief  Match `usr` with the availble projects
+ * @return void
  */
 void Crun::projects() {
-  //* Exit the loop
-  loop = false;
-
   switch (usr) {
-  //? ------------------- C/C++ PROJECTS PART -------------------
-  //* Clone the 'Quick_C-CPP_Project_Env'
+  //? ------------------- C PROJECTS PART -------------------
   case 1:
-    clone_project("Quick_C-CPP_Project_Env");
+    setupProject("CXCodePracticeEnv", CX_FILE_MODE);
     break;
 
-  //* Clone the 'C-CPP_Project_Env'
   case 2:
-    clone_project("C-CPP_Project_Env");
+    setupProject("CXContestEnv");
     break;
 
-  //* Clone the 'SDL-C-CPP_Project_Env'
   case 3:
-    clone_project("SDL-C-CPP_Project_Env");
+    setupProject("QuickCXProjectEnv");
     break;
 
-  //* Clone the 'Qt-C-Cpp_Project_Env'
   case 4:
-    clone_project("Qt-C-Cpp_Project_Env");
+    setupProject("NormalCXProjectEnv");
     break;
 
-  //* Clone the 'Arduino-C-Cpp_Project_Env'
   case 5:
-    clone_project("Arduino-C-Cpp_Project_Env");
+    setupProject("SDLCXProjectEnv");
     break;
 
-  //? ------------------- WEB PROJECTS PART -------------------
-  //* Clone the 'Run_Web_Project'
   case 6:
-    clone_project("Run_Web_Project");
+    setupProject("QtCXProjectEnv");
     break;
 
-  //* Clone the 'ReactJS Project Enviornment'
   case 7:
-    clone_project("#");
+    setupProject("ArduinoCXProjectEnv");
+    break;
+
+    //? -------------------- CPP PROJECTS PART ------------------
+  case 8:
+    setupProject("CXXCodePracticeEnv", CXX_FILE_MODE);
+    break;
+
+  case 9:
+    setupProject("CXXContestEnv");
+    break;
+
+  case 10:
+    setupProject("QuickCXXProjectEnv");
+    break;
+
+  case 11:
+    setupProject("NormalCXXProjectEnv");
+    break;
+
+  case 12:
+    setupProject("SDLCXXProjectEnv");
+    break;
+
+  case 13:
+    setupProject("QtCXXProjectEnv");
+    break;
+
+  case 14:
+    setupProject("ArduinoCXXProjectEnv");
     break;
 
   //? ----------------------- QUIT CRUN -----------------------
@@ -130,41 +156,37 @@ void Crun::projects() {
 }
 
 /**
- * @brief #### Clone + Setup the usr Project without build sys
- *
- * @param project_name stirng
- */
-void Crun::clone_project(std::string project_name) {
-  // Setup the project
-  setupProject(project_name);
-
-  // Installation is complete successfully
-  notify();
-}
-
-/**
  * @brief ### Setup the usr Project
  *
  * - Actions: Delete(rm) | Rename(mv) | clone | changePermission(chmod)
  * @param old_prj_name string
  */
-void Crun::setupProject(std::string old_prj_name) {
-  //* Get the project name
-  get_prj_name();
+void Crun::setupProject(std::string old_prj_name, const CrunProjectsFlags flag) {
+  //* Get the project name if `prj_title` is empty
+  if (prj_title.empty())
+    get_prj_name();
 
-  // Clone the project
   std::string cmd = _GET(old_prj_name);
   system(cmd.c_str());
 
-  // Unzip the pkg
   cmd = _UNZIP(old_prj_name);
   system(cmd.c_str());
 
-  // Del the zip (no need for it)
   cmd = _DEL_ZIP(old_prj_name);
   system(cmd.c_str());
 
-  // Set the project name
+  if (flag == CX_FILE_MODE) {
+    prj_title = prj_title + ".c";
+    (std::rename((old_prj_name + ".c").c_str(), prj_title.c_str()) != 0) ? std::cerr << "[ERROR] Error renaming file\n" : std::cout << "[INFO] File renamed successfully\n";
+    return;
+  }
+
+  if (flag == CXX_FILE_MODE) {
+    prj_title = prj_title + ".cpp";
+    (std::rename((old_prj_name + ".cpp").c_str(), prj_title.c_str()) != 0) ? std::cerr << "[ERROR] Error renaming file\n" : std::cout << "[INFO] File renamed successfully\n";
+    return;
+  }
+
   cmd = _SET_NAME(old_prj_name, prj_title);
   system(cmd.c_str());
 }
@@ -175,11 +197,7 @@ void Crun::setupProject(std::string old_prj_name) {
  * @return void
  */
 void Crun::get_prj_name() {
-  if (!prj_title.empty())
-    return;
   MENU2;
-
-  //* Take the usr input
   while (getchar() != '\n')
     ;
   getline(std::cin, prj_title);

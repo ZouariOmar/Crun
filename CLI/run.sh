@@ -33,7 +33,7 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No color
 
 #* Define variables
-APP_NAME="Crun"
+APP_NAME="crun"
 BUILD_DIR="bin/build"
 CMAKE_LIST_DIR="conf"
 CMAKE_GENERATOR="Ninja"
