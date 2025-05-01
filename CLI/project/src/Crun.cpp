@@ -28,7 +28,7 @@
 Crun::Crun(const int argc, const char **argv)
     : loop(true),
       usr(-1),
-      prj_title("") {
+      usrProjectName("") {
   if (!((argc == 1) ||
         (argc == 3 && is_flag(std::string{argv[1]} + std::string{argv[2]})) ||
         (argc == 5 && is_flag(std::string{argv[1]} + std::string{argv[2]}) && is_flag(std::string{argv[3]} + std::string{argv[4]})))) {
@@ -70,7 +70,7 @@ bool Crun::is_flag(std::string str) {
     if (match[1].matched)
       usr = stoi(match[1]);
     else if (match[2].matched)
-      prj_title = match[2];
+      usrProjectName = match[2];
     return true;
   }
   return false;
@@ -156,15 +156,22 @@ void Crun::projects() {
 }
 
 /**
- * @brief ### Setup the usr Project
+ * @fn    Crun::setupProject(std::string, const CrunProjectsFlags)
+ * @brief Setup the selected usr project
  *
- * - Actions: Delete(rm) | Rename(mv) | clone | changePermission(chmod)
- * @param old_prj_name string
+ * @details Actions:
+ *            Clone(git) - Clone the pkg
+ *            Delete(rm) - Delete the unnecessary .zip file
+ *            Rename(mv) - Change the default project name to `usrProjectName`
+ *
+ * @param old_prj_name std::string
+ * @param flag         {const CrunProjectsFlags}
+ * @return             void
  */
 void Crun::setupProject(std::string old_prj_name, const CrunProjectsFlags flag) {
-  //* Get the project name if `prj_title` is empty
-  if (prj_title.empty())
-    get_prj_name();
+  //* Get the project name if `usrProjectName` is empty
+  if (usrProjectName.empty())
+    get_projectName();
 
   std::string cmd = _GET(old_prj_name);
   system(cmd.c_str());
@@ -176,31 +183,31 @@ void Crun::setupProject(std::string old_prj_name, const CrunProjectsFlags flag) 
   system(cmd.c_str());
 
   if (flag == CX_FILE_MODE) {
-    prj_title = prj_title + ".c";
-    (std::rename((old_prj_name + ".c").c_str(), prj_title.c_str()) != 0) ? std::cerr << "[ERROR] Error renaming file\n" : std::cout << "[INFO] File renamed successfully\n";
+    usrProjectName = usrProjectName + ".c";
+    (std::rename((old_prj_name + ".c").c_str(), usrProjectName.c_str()) != 0) ? std::cerr << "[ERROR] Error renaming file\n" : std::cout << "[INFO] File renamed successfully\n";
     return;
   }
 
   if (flag == CXX_FILE_MODE) {
-    prj_title = prj_title + ".cpp";
-    (std::rename((old_prj_name + ".cpp").c_str(), prj_title.c_str()) != 0) ? std::cerr << "[ERROR] Error renaming file\n" : std::cout << "[INFO] File renamed successfully\n";
+    usrProjectName = usrProjectName + ".cpp";
+    (std::rename((old_prj_name + ".cpp").c_str(), usrProjectName.c_str()) != 0) ? std::cerr << "[ERROR] Error renaming file\n" : std::cout << "[INFO] File renamed successfully\n";
     return;
   }
 
-  cmd = _SET_NAME(old_prj_name, prj_title);
+  cmd = _SET_NAME(old_prj_name, usrProjectName);
   system(cmd.c_str());
 }
 
 /**
- * @fn     Crun::get_prj_name()
+ * @fn     Crun::get_projectName()
  * @brief  Get the usr project name
  * @return void
  */
-void Crun::get_prj_name() {
+void Crun::get_projectName() {
   MENU2;
   while (getchar() != '\n')
     ;
-  getline(std::cin, prj_title);
+  getline(std::cin, usrProjectName);
 }
 
 /**
@@ -213,5 +220,5 @@ void Crun::notify() {
   printf("%sInstallation Complete!%s\n", green, def);
 
   //* Open the project with NVIM/VIM
-  system(("nvim '" + prj_title + "' || vim '" + prj_title + "'").c_str());
+  system(("nvim '" + usrProjectName + "' || vim '" + usrProjectName + "'").c_str());
 }

@@ -30,17 +30,19 @@ enum CrunProjectsFlags {
 
 //? Class prototype declaration part
 
-void __lance__(int, const char **);
-
+/**
+ * @class Crun
+ * @brief Crun class
+ */
 class Crun {
 private:
-  int usr;               // Usr choices
-  bool loop;             // Crun program run/exit var
-  std::string prj_title; // The usr project title
+  int usr;                    // Usr choices
+  bool loop;                  // Crun program run/exit var
+  std::string usrProjectName; // The usr project title
   bool is_flag(std::string);
   void projects();
   void setupProject(std::string, const CrunProjectsFlags flag = NORMAL_MODE);
-  void get_prj_name();
+  void get_projectName();
   // downloadPkg(char *);
 
 public:
