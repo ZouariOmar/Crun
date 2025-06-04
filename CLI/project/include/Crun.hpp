@@ -26,7 +26,13 @@ enum CrunProjectsFlags {
   NORMAL_MODE,
   CX_FILE_MODE,
   CXX_FILE_MODE
-}; // CrunProjectsFlags
+}; // CrunProjectsFlags enum
+
+enum CrunProjectsLanguage {
+  CX_PROJECT = 1,
+  CXX_PROJECT,
+  JAVA_PROJECT
+}; // CrunProjectsLanguage enum
 
 //? Class prototype declaration part
 
@@ -36,14 +42,16 @@ enum CrunProjectsFlags {
  */
 class Crun {
 private:
-  int usr;                    // Usr choices
-  bool loop;                  // Crun program run/exit var
-  std::string usrProjectName; // The usr project title
+  short usr_project, usr_language; // Usr choices
+  std::string usrProjectName;      // The usr project title
+  bool is_installed;               // Flag to detect if the project installed or not
   bool is_flag(std::string);
   void projects();
+  void cx_projects();
+  void cxx_projects();
+  void java_projects();
   void setupProject(std::string, const CrunProjectsFlags flag = NORMAL_MODE);
   void get_projectName();
-  // downloadPkg(char *);
 
 public:
   Crun(const int, const char **);

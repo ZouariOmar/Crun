@@ -11,31 +11,27 @@
 #include "color.h"
 
 //? Menus patterns
-#define CRUN                                                                   \
+#define CRUN_HEADER                                                            \
   system("echo \"\033[0;32m$(figlet -w $(tput cols) '                        " \
-         "        Crun - V1.2')\033[0m\"")
-#define MENU0                                                               \
+         "        Crun - V1.3')\033[0m\"")
+
+#define CRUN_BANNER                                                         \
   std::cout << bleu                                                         \
             << "\t\t\t\t=================== Crun Project "                  \
                "===================\n\t\t\t\t================== By "        \
                "@ZouariOmar ==================\n\t\t\t\t==== Visit Us In: " \
-               "https://github.com/ZouariOmar ====\n\n"                     \
-            << def
-#define MENU1                                                                                                     \
+               "https://github.com/ZouariOmar ===="                         \
+            << def << "\n\n"
+
+#define PROJECT_MENU                                                                                              \
   std::cout << yellow                                                                                             \
             << "\t\t------------------------------------------------------------------------------------------\n" \
             << red                                                                                                \
-            << "\t\t\tC Projects:\n"                                                                              \
+            << "\t\tProject Language:\n"                                                                          \
             << yellow                                                                                             \
-            << "\t\t\t[1] C Code Practice Env      [2] C Contest Env         [3] Quick C Project Env\n"           \
-               "\t\t\t[4] Normal C Project Env     [5] SDL C Project Env     [6] Qt C Project Env\n"              \
-               "\t\t\t[7] Arduino C Project Env\n"                                                                \
-            << red                                                                                                \
-            << "\t\t\tC++ Projects:\n"                                                                            \
-            << yellow                                                                                             \
-            << "\t\t\t[8] C++ Code Practice Env    [9] C++ Contest Env       [10] Quick C++ Project Env\n"        \
-               "\t\t\t[11] Normal C++ Project Env  [12] SDL C++ Project Env  [13] Qt C++ Project Env\n"           \
-               "\t\t\t[7] Arduino C Project Env\n"                                                                \
+            << "\t\t\t[1] C\n"                                                                                    \
+               "\t\t\t[2] C++\n"                                                                                  \
+               "\t\t\t[3] Java\n"                                                                                 \
                "\t\t\t[0] Exit\n"                                                                                 \
             << red                                                                                                \
             << "\t\tVisit https://github.com/ZouariOmar/Crun for more info\n"                                     \
@@ -43,9 +39,66 @@
             << "\t\t------------------------------------------------------------------------------------------\n" \
                "..."                                                                                              \
             << def
-#define MENU2 std::cout << yellow << "\n\nProject Name..." << def
+
+#define CX_MENU                                                                                                   \
+  std::cout << yellow                                                                                             \
+            << "\t\t------------------------------------------------------------------------------------------\n" \
+            << red                                                                                                \
+            << "\t\tC Projects:\n"                                                                                \
+            << yellow                                                                                             \
+            << "\t\t\t[1] C Code Practice      [2] C Contest         [3] Quick C Project\n"                       \
+               "\t\t\t[4] Normal C Project     [5] SDL C Project     [6] Arduino C Project\n"                     \
+               "\t\t\t[0] Exit\n"                                                                                 \
+            << red                                                                                                \
+            << "\t\tVisit https://github.com/ZouariOmar/Crun for more info\n"                                     \
+            << yellow                                                                                             \
+            << "\t\t------------------------------------------------------------------------------------------\n" \
+               "..."                                                                                              \
+            << def
+
+#define CXX_MENU                                                                                                  \
+  std::cout << yellow                                                                                             \
+            << "\t\t------------------------------------------------------------------------------------------\n" \
+            << red                                                                                                \
+            << "\t\tC++ Projects:\n"                                                                              \
+            << yellow                                                                                             \
+            << "\t\t\t[1] C++ Code Practice    [2] C++ Contest       [3] Quick C++ Project\n"                     \
+               "\t\t\t[4] Normal C++ Project   [5] SDL C++ Project   [6] Qt C++ Project\n"                        \
+               "\t\t\t[7] Arduino C++ Project\n"                                                                  \
+               "\t\t\t[0] Exit\n"                                                                                 \
+            << red                                                                                                \
+            << "\t\tVisit https://github.com/ZouariOmar/Crun for more info\n"                                     \
+            << yellow                                                                                             \
+            << "\t\t------------------------------------------------------------------------------------------\n" \
+               "..."                                                                                              \
+            << def
+
+#define JAVA_MENU                                                                                                 \
+  std::cout << yellow                                                                                             \
+            << "\t\t------------------------------------------------------------------------------------------\n" \
+            << red                                                                                                \
+            << "\t\tJava Projects:\n"                                                                             \
+            << yellow                                                                                             \
+            << "\t\t\t[0] Exit\n"                                                                                 \
+            << red                                                                                                \
+            << "\t\tVisit https://github.com/ZouariOmar/Crun for more info\n"                                     \
+            << yellow                                                                                             \
+            << "\t\t------------------------------------------------------------------------------------------\n" \
+               "..."                                                                                              \
+            << def
+
+#define PROJECT_NAME std::cout << yellow << "\n\nProject Name..." << def
 
 //? Messages patterns
+#define HELP_MSG                                                                                  \
+  std::cout << yellow                                                                             \
+            << "Usage:\n"                                                                         \
+            << def                                                                                \
+            << "  --language <c|cpp|java> Set the language (c = 1, cpp = 2, java = 3)\n"          \
+            << "  --project <N>           Set the project ID (N must be a number from 1 to 9+)\n" \
+            << "  --name <NAME>           Set the user name (only letters A-Z, a-z)\n"            \
+            << "  --help                  Display this help message\n";
+
 #define INVALID_OPTION_MSG std::cout << red << "\n\n[WARR] Invalid Option !\n\n" \
                                      << def
 #define EXIT_SUCCESS_MSG                                        \
@@ -55,8 +108,13 @@
 #define INSTALLATION_COMPLETE_MSG std::cout << green << "Installation Complete!\nHAPPY CODING ⚡️" \
                                             << def
 
+#define Debug(x, y, z) std::cerr << x << " --- " << y << " --- " << z << '\n'
+
 //? Internal Crun patterns
-#define CRUN_CLI_FLAGS_PATTERN "-p([1-9]+)|-n([A-Za-z]+)"
+#define CRUN_LANGUAGE_REGEX_PATTERN "--language([1-9]+)"
+#define CRUN_PROJECT_REGEX_PATTERN "--project([1-9]+)"
+#define CRUN_NAME_REGEX_PATTERN "--name([A-Za-z]+)"
+#define CRUN_HELP_REGEX_PATTERN "--help"
 
 //? CMD's patterns
 #define _GET(x)                                                              \

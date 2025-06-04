@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<RCC>
-  <qresource prefix="/">
-    <file>imgs/Crun.ico</file>  <!-- Path to your image -->
-  </qresource>
-</RCC>

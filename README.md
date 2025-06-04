@@ -34,7 +34,7 @@
   <a href="#license">License</a>
 </p>
 
-![screenshot](doc/imgs/screenshot.png)
+![screenshot](doc/crun.png)
 
 ## Key Features
 
@@ -68,7 +68,7 @@ $ sudo mv bin/build/crun /usr/local/bin
 
 You can [download](https://github.com/ZouariOmar/Crun/releases) the latest release of Crun for Linux.
 
-> Or you can download Crun bin version from [Her](https://www.mediafire.com/file/yufib9zbdljwy7g/Crun.zip/file)
+> Or you can download Crun bin version from [Her](https://www.mediafire.com/file/odntbc42r4as8n2/Crun.zip/file)
 
 ## Emailware
 
